@@ -14,12 +14,18 @@ default: &default
   encoding: utf8
   pool: 5
   username: root
-  password:
+  password: radeks92
   socket: /var/run/mysqld/mysqld.sock
 
 development:
   <<: *default
   database: events_for_seniors_development
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: radeks92
+  socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -27,6 +33,12 @@ development:
 test:
   <<: *default
   database: events_for_seniors_test
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: radeks92
+  socket: /var/run/mysqld/mysqld.sock
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
