@@ -1,7 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Events</h1>
+<div class="row">
+  <% @events.each do |event| %>
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-centered">
+        <article class="event">
+          <div class="event-part" id="event-title">
+            <h2><%= event.name %></h2>
+          </div>
+          <div class="event-part" id="event-location">
+            <p><%= event.location %></p>
+          </div>
+          <div class="event-part" id="event-additional">
 
+          </div>
+          <div class="event-part" id="event-additional">
+            <%= link_to 'Info', event, class: 'btn btn-info' %>
+          </div>
+        </article>
+      </div>
+  <% end %>
+</div>
 <table class="table">
   <thead>
 
