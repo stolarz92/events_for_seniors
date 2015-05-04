@@ -1,2 +1,29 @@
-<h1>Homepage#index</h1>
-<p>Find me in app/views/homepage/index.html.erb</p>
+<div class="row row-centered">
+  <div id="search" class="homepage-box">
+    <%= render 'search' %>
+  </div>
+</div>
+
+<hr class="hr-line"/>
+
+<div class="row row-centered">
+  <div id="propositions" class="homepage-box">
+    <%= render 'propositions' %>
+  </div>
+</div>
+
+<hr class="hr-line"/>
+
+<div class="row row-centered">
+  <div id="popular-events" class="homepage-box">
+    <%= render 'newest' %>
+  </div>
+</div>
+
+<hr class="hr-line"/>
+
+<div class="row row-centered">
+  <div id="newest-events" class="homepage-box">
+    <%= render 'popular' %>
+  </div>
+</div>
