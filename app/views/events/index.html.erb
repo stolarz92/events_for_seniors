@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div id="events-top-belt">
-  <h1>Wydarzenia w dniu 00.00.2015</h1>
+  <h1>Wydarzenia w dniu 00.00.2015 w mieście <%= @city.name %></h1>
 
 </div>
 
@@ -45,11 +45,11 @@
 
           </div>
           <div class="event-part" id="event-button">
-            <%= link_to 'Show', event, class: 'btn btn-info' %>
-            <%= link_to 'Edit', edit_event_path(event), class: 'btn btn-warning' %>
-            <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>          </div>
+            <%= link_to 'Show', [event.city, event], class: 'btn btn-info' %>
+            <%= link_to 'Edit', edit_city_event_path(event.city, event), class: 'btn btn-warning' %>
+            <%= link_to 'Destroy', [event.city, event], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>          </div>
         </article>
       </div>
   <% end %>
 </div>
-<%= link_to 'New Event', new_event_path %>
+<%= link_to 'New Event', new_city_event_path %>

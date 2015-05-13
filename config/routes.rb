@@ -1,8 +1,23 @@
 Rails.application.routes.draw do
 
+=begin
+  get 'cities/new'
+
+  get 'cities/create'
+
+  get 'cities/update'
+
+  get 'cities/index'
+
+  get 'cities/show'
+=end
+
   get '/' => 'homepage#index'
 
-  resources :events
+  resources :cities do
+    resources :events
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
