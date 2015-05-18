@@ -25,9 +25,29 @@
         </div>
         <div class="form-group">
           <label class="sr-only" for="date">Email</label>
-          <input type="date" class="form-control input-lg" id="date" placeholder="Wybierz datę">
+          <input type="text" class="form-control input-lg" id="date" placeholder="Wybierz datę" data-provide = 'datepicker'>
         </div>
         <%= submit_tag 'Szukaj',:name => nil, class: 'btn btn-danger btn-lg' %>
     <% end %>
   </div>
 </div>
+
+<script>
+    /**
+     * Polish translation for bootstrap-datepicker
+     * Robert <rtpm@gazeta.pl>
+     */
+    ;(function($){
+        $.fn.datepicker.dates['pl'] = {
+            days: ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"],
+            daysShort: ["niedz.", "pon.", "wt.", "śr.", "czw.", "piąt.", "sob."],
+            daysMin: ["ndz.", "pn.", "wt.", "śr.", "czw.", "pt.", "sob."],
+            months: ["styczeń", "luty", "marzec", "kwiecień", "maj", "czerwiec", "lipiec", "sierpień", "wrzesień", "październik", "listopad", "grudzień"],
+            monthsShort: ["sty.", "lut.", "mar.", "kwi.", "maj", "cze.", "lip.", "sie.", "wrz.", "paź.", "lis.", "gru."],
+            today: "dzisiaj",
+            weekStart: 1,
+            clear: "wyczyść",
+            format: "dd.mm.yyyy"
+        };
+    }(jQuery));
+</script>
