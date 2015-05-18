@@ -9,16 +9,25 @@
     </p>
   </div>
   <div class="search-field">
-    <form class="form-inline">
-      <div class="form-group">
-        <label class="sr-only" for="place">Name</label>
-        <input type="search" class="form-control input-lg" id="place" placeholder="Wpisz miejsce">
-      </div>
-      <div class="form-group">
-        <label class="sr-only" for="date">Email</label>
-        <input type="date" class="form-control input-lg" id="date" placeholder="Wybierz datę">
-      </div>
-      <button type="submit" class="btn btn-danger btn-lg">Szukaj wydarzeń</button>
-    </form>
+    <%= form_tag cities_path, :method => 'get', id: 'search-form', class: 'form-inline' do %>
+        <div class="form-group">
+          <label class="sr-only" for="place">Name</label>
+          <%#= autocomplete_field_tag :search, params[:search], autocomplete_city_name_cities_path %>
+          <%= text_field_tag :search,
+                             params[:search],
+                             class: 'form-control input-lg',
+                             placeholder: 'Kraków',
+                             type: 'search',
+                             data: {
+                                  autocomplete: homepage_autocomplete_city_name_path
+                             }
+          %>
+        </div>
+        <div class="form-group">
+          <label class="sr-only" for="date">Email</label>
+          <input type="date" class="form-control input-lg" id="date" placeholder="Wybierz datę">
+        </div>
+        <%= submit_tag 'Szukaj',:name => nil, class: 'btn btn-danger btn-lg' %>
+    <% end %>
   </div>
 </div>

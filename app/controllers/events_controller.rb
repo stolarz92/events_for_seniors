@@ -75,7 +75,8 @@ class EventsController < ApplicationController
         :date,
         :location,
         :starts_at,
-        :ends_at
+        :ends_at,
+        :city_id
       )
     end
 end
