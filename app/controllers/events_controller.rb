@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = @city.events
+    format_time
   end
 
   # GET /events/1
@@ -72,7 +73,8 @@ class EventsController < ApplicationController
       params.require(:event).permit(
         :name,
         :description,
-        :date,
+        :start_date,
+        :end_date,
         :location,
         :starts_at,
         :ends_at,

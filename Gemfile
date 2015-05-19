@@ -31,6 +31,8 @@ gem 'jquery-ui-rails'
 gem 'rails4-autocomplete'
 # Datepicker
 gem 'bootstrap-datepicker-rails'
+# Timepicker
+gem 'jquery-timepicker-rails'
 # I18n
 gem 'rails-i18n', '~> 4.0.0'
 

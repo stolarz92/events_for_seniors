@@ -1,15 +1,15 @@
 <%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+    <% if @event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% @event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% @event.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
     <div class="form-group">
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -18,21 +18,32 @@
       <%= f.label :description %>
       <%= f.text_area :description, class: 'form-control' %>
     </div>
-    <div class="form-group">
-      <%= f.label :date %>
-      <%= f.text_field :date,
-                 class: 'form-control',
-                 placeholder: 'Kliknij, aby wybrać datę',
-                 :data => {provide: 'datepicker'}
+    <div id="datepair" class="form-group form-inline input-daterange">
+      <%= f.label :start_date, class: 'sr-only' %>
+      <%= f.text_field :start_date,
+                       class: 'form-control date',
+                       placeholder: 'Data rozpoczęcia, kliknij'
+                       #:data => {provide: 'datepicker'}
+      %>
+        <span class="add-on">to</span>
+      <%= f.label :end_date, class: 'sr-only' %>
+      <%= f.text_field :end_date,
+                       class: 'form-control date',
+                       placeholder: 'Data zakończenia, kliknij'
+                       #:data => {provide: 'datepicker'}
       %>
     </div>
-    <div class="form-group">
+
+    <div id="timepair" class="form-group form-inline">
       <%= f.label :starts_at %>
-      <%= f.time_field :starts_at, class: 'form-control' %>
-    </div>
-    <div class="form-group">
+      <%= f.text_field :starts_at,
+                       class: 'time form-control'
+      %>
+
       <%= f.label :ends_at %>
-      <%= f.time_field :ends_at, class: 'form-control' %>
+      <%= f.text_field :ends_at,
+                       class: 'time form-control'
+      %>
     </div>
     <div class="form-group">
       <%= f.label :location %>
@@ -41,15 +52,15 @@
     <div class="form-group">
       <%= f.label :city %>
       <%= collection_select(:event,
-                              :city_id,
-                              City.all,
-                              :id,
-                              :name,
-                              {prompt: 'Wybierz miasto'},
-                              {class: 'form-control'}) %>
+                            :city_id,
+                            City.all,
+                            :id,
+                            :name,
+                            {prompt: 'Wybierz miasto'},
+                            {class: 'form-control'}) %>
     </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
 <% end %>

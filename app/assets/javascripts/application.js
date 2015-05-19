@@ -15,6 +15,8 @@
 //= require jquery-ui
 //= require autocomplete-rails
 //= require bootstrap-datepicker
+//= require jquery.timepicker.js
+//= require jquery.datepair.js
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
