@@ -9,37 +9,31 @@
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
-#default: &default
-#  database: 12_stolarski
-#  adapter: mysql2
-#  encoding: utf8
-#  pool: 5
-#  username: 12_stolarski
-#  password: MOJEhaslo
-#  socket: /var/run/mysqld/mysqld.sock
-
-development:
-  <<: *default
-  database: 12_stolarski
+default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: 12_stolarski
-  password: MOJEhaslo
+  username: root
+  password: radeks92
   socket: /var/run/mysqld/mysqld.sock
+
+development:
+  <<: *default
+  adapter: sqlite3
+  database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-#test:
-#  <<: *default
-#  database: events_for_seniors_test
-#  adapter: mysql2
-#  encoding: utf8
-#  pool: 5
-#  username: 12_stolarski
-#  password: MOJEhaslo
-#  socket: /var/run/mysqld/mysqld.sock
+test:
+  <<: *default
+  database: events_for_seniors_test
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: radeks92
+  socket: /var/run/mysqld/mysqld.sock
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
