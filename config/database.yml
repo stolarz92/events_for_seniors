@@ -10,11 +10,12 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 default: &default
+  database: 12_stolarski
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: radeks92
+  username: 12_stolarski
+  password: MOJEhaslo
   socket: /var/run/mysqld/mysqld.sock
 
 development:
