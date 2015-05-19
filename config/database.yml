@@ -37,8 +37,8 @@ test:
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: root
-  password: radeks92
+  username: 12_stolarski
+  password: MOJEhaslo
   socket: /var/run/mysqld/mysqld.sock
 
 # As with config/secrets.yml, you never want to store sensitive information,
