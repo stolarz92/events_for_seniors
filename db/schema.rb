@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150519090007) do
+ActiveRecord::Schema.define(version: 20150513183445) do
 
   create_table "cities", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -22,12 +22,13 @@ ActiveRecord::Schema.define(version: 20150519090007) do
   create_table "events", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
-    t.date     "date"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.time     "starts_at"
+    t.time     "ends_at"
     t.string   "location",    limit: 255
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.time     "starts_at"
-    t.time     "ends_at"
     t.integer  "city_id",     limit: 4
   end
 
