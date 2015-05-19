@@ -19,8 +19,13 @@ default: &default
 
 development:
   <<: *default
-  adapter: sqlite3
-  database: db/development.sqlite3
+  database: events_for_seniors_development
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: 12_stolarski
+  password: MOJEhaslo
+  socket: /var/run/mysqld/mysqld.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
