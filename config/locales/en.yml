@@ -20,4 +20,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  layouts:
+    application:
+      app_name: "Events for seniors"
+    navbar:
+      app_name: "Events for seniors"

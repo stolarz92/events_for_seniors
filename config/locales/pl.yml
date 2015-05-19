@@ -1,0 +1,6 @@
+pl:
+  layouts:
+    application:
+      app_name: "Wydarzenia dla seniorów"
+    navbar:
+      app_name: "Wydarzenia dla seniorów"

@@ -12,14 +12,16 @@ Rails.application.routes.draw do
   get 'cities/show'
 =end
 
-  get '/' => 'homepage#index'
-  get 'homepage/autocomplete_city_name'
 
-  resources :cities do
+  scope'(:locale)' do
+    get '/' => 'homepage#index'
+    get 'homepage/autocomplete_city_name'
+
+    resources :cities do
+      resources :events
+    end
     resources :events
   end
-  resources :events
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
