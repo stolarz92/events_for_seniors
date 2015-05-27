@@ -35,6 +35,8 @@ gem 'bootstrap-datepicker-rails'
 gem 'jquery-timepicker-rails'
 # I18n
 gem 'rails-i18n', '~> 4.0.0'
+# Faker
+gem 'faker', '~> 1.4.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
