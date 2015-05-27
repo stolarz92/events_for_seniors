@@ -10,15 +10,15 @@ Category.create([{name: "Teatr"}, {name: "Wystawa"},{name: "Jedzenie"}])
 
 Faker::Config.locale = :pl
 
-10.times do |n|
+50.times do |n|
   name = Faker::Lorem.word
   description = Faker::Lorem.paragraph(2)
-  start_date = Faker::Date.backward(14).strftime("%d-%m-%Y")
-  end_date = Faker::Date.forward(14).strftime("%d-%m-%Y")
+  start_date = Faker::Date.backward(3).strftime("%d-%m-%Y")
+  end_date = Faker::Date.forward(2).strftime("%d-%m-%Y")
   starts_at = Faker::Time.forward(30, :morning).strftime("%H:%M:S")
   ends_at = Faker::Time.forward(30, :night).strftime("%H:%M:S")
   location = Faker::Address.street_name
-  city_id = [1,2,3,4].sample
+  city_id = [1,2,3].sample
   Event.create!(name: name,
                description: description,
                start_date: start_date,
