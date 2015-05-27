@@ -2,8 +2,9 @@ class CitiesController < ApplicationController
   before_action :set_city
 
   def index
-    if params[:search] && @city
-      @events = @city.events.all
+    if params[:search] && params[:date] && @city
+      date = params[:date].to_date
+      @events = @city.events.where(start_date: date)
     end
   end
 

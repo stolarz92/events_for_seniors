@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - @localhost" uuid="bfc71fb6-2d1a-4acd-ae8b-92ad53b1f11e">
+    <data-source name="MySQL - events_for_seniors_development@localhost" uuid="a8f7b915-9815-4a9e-aa22-4baf55342e8a">
       <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
+      <user-name>root</user-name>
+      <schema-pattern>events_for_seniors_development.*</schema-pattern>
+      <default-schemas>events_for_seniors_development.*</default-schemas>
     </data-source>
   </component>
 </project>

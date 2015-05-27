@@ -1,18 +1,5 @@
 Rails.application.routes.draw do
 
-=begin
-  get 'cities/new'
-
-  get 'cities/create'
-
-  get 'cities/update'
-
-  get 'cities/index'
-
-  get 'cities/show'
-=end
-
-
   scope'(:locale)' do
     get '/' => 'homepage#index'
     get 'homepage/autocomplete_city_name'
