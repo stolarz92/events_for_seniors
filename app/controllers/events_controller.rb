@@ -1,11 +1,14 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_city
 
   # GET /events
   # GET /events.json
   def index
-    @events = @city.events
-    format_time
+    if params[:search] && params[:date] && @city
+      date = params[:date].to_date
+      @events = @city.events.where(start_date: date)
+    end
   end
 
   # GET /events/1
@@ -60,6 +63,10 @@ class EventsController < ApplicationController
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def set_city
+    @city = City.find_by name: params[:search]
   end
 
   private
