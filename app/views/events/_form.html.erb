@@ -59,6 +59,18 @@
                             {prompt: 'Wybierz miasto'},
                             {class: 'form-control'}) %>
     </div>
+    <div class="form-group">
+      <%= f.label :contact %>
+      <%= f.text_field :contact, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :cost %>
+      <%= f.text_field :cost, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :website %>
+      <%= f.text_field :website, class: 'form-control' %>
+    </div>
 
     <div class="actions">
       <%= f.submit %>
