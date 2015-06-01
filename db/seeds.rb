@@ -5,15 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-City.create([{ name: "Kraków"}, {name: "Warszawa"}, {name: "Wrocław"}])
-Category.create([{name: "Teatr"}, {name: "Wystawa"},{name: "Jedzenie"}])
+#City.create([{ name: "Kraków"}, {name: "Warszawa"}, {name: "Wrocław"}])
+#Category.create([{name: "Teatr"}, {name: "Wystawa"},{name: "Jedzenie"}])
 
 Faker::Config.locale = :pl
 
 50.times do |n|
   name = Faker::Lorem.word
   description = Faker::Lorem.paragraph(2)
-  start_date = Faker::Date.backward(3).strftime("%d-%m-%Y")
+  start_date = Faker::Date.backward(1).strftime("%d-%m-%Y")
   end_date = Faker::Date.forward(2).strftime("%d-%m-%Y")
   starts_at = Faker::Time.forward(30, :morning).strftime("%H:%M:S")
   ends_at = Faker::Time.forward(30, :night).strftime("%H:%M:S")
