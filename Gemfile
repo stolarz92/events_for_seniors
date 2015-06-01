@@ -37,6 +37,8 @@ gem 'jquery-timepicker-rails'
 gem 'rails-i18n', '~> 4.0.0'
 # Faker
 gem 'faker', '~> 1.4.3'
+# Paperclip
+gem 'paperclip', '~> 4.2'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

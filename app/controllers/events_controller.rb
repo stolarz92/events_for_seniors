@@ -88,7 +88,8 @@ class EventsController < ApplicationController
         :city_id,
         :contact,
         :website,
-        :cost
+        :cost,
+        :image
       )
     end
 end
