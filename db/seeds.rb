@@ -5,8 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-#City.create([{ name: "Kraków"}, {name: "Warszawa"}, {name: "Wrocław"}])
-#Category.create([{name: "Teatr"}, {name: "Wystawa"},{name: "Jedzenie"}])
+City.create([{ name: "Kraków"}, {name: "Warszawa"}, {name: "Wrocław"}])
+Category.create([{name: "Teatr"}, {name: "Wystawa"},{name: "Jedzenie"}])
 
 Faker::Config.locale = :pl
 
@@ -18,14 +18,23 @@ Faker::Config.locale = :pl
   starts_at = Faker::Time.forward(30, :morning).strftime("%H:%M:S")
   ends_at = Faker::Time.forward(30, :night).strftime("%H:%M:S")
   location = Faker::Address.street_name
+  website = Faker::Internet.url
+  cost = Faker::Number.number(7)
+  contact = Faker::PhoneNumber.phone_number
+  category_id = [1,2,3].sample
   city_id = [1,2,3].sample
   Event.create!(name: name,
-               description: description,
-               start_date: start_date,
-               end_date: end_date,
-               starts_at: starts_at,
-               ends_at: ends_at,
-               location: location,
-               city_id: city_id
+                description: description,
+                start_date: start_date,
+                end_date: end_date,
+                starts_at: starts_at,
+                ends_at: ends_at,
+                location: location,
+                city_id: city_id,
+                category_id: category_id,
+                website: website,
+                cost: cost,
+                contact: contact,
+                image: File.new("/home/stolarz/Obrazy/ds-firebird-logo-500.png")
   )
 end

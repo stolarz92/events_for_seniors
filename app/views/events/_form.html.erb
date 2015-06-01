@@ -60,6 +60,16 @@
                             {class: 'form-control'}) %>
     </div>
     <div class="form-group">
+      <%= f.label :category %>
+      <%= collection_select(:event,
+                            :category_id,
+                            Category.all,
+                            :id,
+                            :name,
+                            {prompt: 'Wybierz kategorię'},
+                            {class: 'form-control'}) %>
+    </div>
+    <div class="form-group">
       <%= f.label :contact %>
       <%= f.text_field :contact, class: 'form-control' %>
     </div>

@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include EventsHelper
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :set_city
 
@@ -8,12 +9,14 @@ class EventsController < ApplicationController
     if params[:search] && params[:date] && @city
       date = params[:date].to_date
       @events = @city.events.where(start_date: date)
+      @categories = get_categories(@events)
     end
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    @category = @event.category
   end
 
   # GET /events/new
@@ -66,18 +69,22 @@ class EventsController < ApplicationController
   end
 
   def set_city
-    @city = City.find_by name: params[:search]
+    if params[:search]
+      @city = City.find_by name: params[:search]
+    else
+      @city = @event.city
+    end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_event
-      @event = Event.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def event_params
-      params.require(:event).permit(
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def event_params
+    params.require(:event).permit(
         :name,
         :description,
         :start_date,
@@ -89,7 +96,8 @@ class EventsController < ApplicationController
         :contact,
         :website,
         :cost,
-        :image
-      )
-    end
+        :image,
+        :category_id
+    )
+  end
 end
