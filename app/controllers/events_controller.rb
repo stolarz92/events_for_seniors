@@ -8,7 +8,8 @@ class EventsController < ApplicationController
   def index
     if params[:search] && params[:date] && @city
       date = params[:date].to_date
-      @events = @city.events.where(start_date: date)
+      #@events = @city.events.where(start_date: date)
+      @events = @city.events.filter(params.slice(:category_id, :start_date, :cost))
       @categories = get_categories(@events)
     end
   end
@@ -97,7 +98,8 @@ class EventsController < ApplicationController
         :website,
         :cost,
         :image,
-        :category_id
+        :category_id,
+        :effort
     )
   end
 end

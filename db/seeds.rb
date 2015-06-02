@@ -23,6 +23,13 @@ Faker::Config.locale = :pl
   contact = Faker::PhoneNumber.phone_number
   category_id = [1,2,3].sample
   city_id = [1,2,3].sample
+  image = ["/home/stolarz/Obrazy/ds-firebird-logo-500.png",
+           "/home/stolarz/Obrazy/Money/DP-500S-01.jpg",
+           "/home/stolarz/Obrazy/Money/DP-500S-02.jpg",
+           "/home/stolarz/Obrazy/Money/DP-500S-03.jpg",
+           "/home/stolarz/Obrazy/Money/DP-500S-04.jpg",
+           "/home/stolarz/Obrazy/Money/DP-500S-05.jpg",
+           "/home/stolarz/Obrazy/Money/DP-500S-06.jpg",].sample
   Event.create!(name: name,
                 description: description,
                 start_date: start_date,
@@ -35,6 +42,6 @@ Faker::Config.locale = :pl
                 website: website,
                 cost: cost,
                 contact: contact,
-                image: File.new("/home/stolarz/Obrazy/ds-firebird-logo-500.png")
+                image: File.new(image)
   )
 end
