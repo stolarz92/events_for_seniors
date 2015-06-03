@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   include EventsHelper
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :set_city
+  before_action :set_city, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /events
   # GET /events.json
@@ -69,18 +69,18 @@ class EventsController < ApplicationController
     end
   end
 
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_event
+    @event = Event.find(params[:id])
+  end
+
   def set_city
     if params[:search]
       @city = City.find_by name: params[:search]
     else
       @city = @event.city
     end
-  end
-
-  private
-  # Use callbacks to share common setup or constraints between actions.
-  def set_event
-    @event = Event.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
