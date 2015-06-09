@@ -1,5 +1,4 @@
 class EventsController < ApplicationController
-  include EventsHelper
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :set_city, only: [:index, :show, :edit, :update, :destroy]
 
@@ -7,10 +6,8 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     if params[:search] && params[:date] && @city
-      date = params[:date].to_date
-      #@events = @city.events.where(start_date: date)
-      @events = @city.events.filter(params.slice(:category_id, :start_date, :cost))
-      @categories = get_categories(@events)
+      @events = @city.filtered_events(params)
+      @categories = Category.all
     end
   end
 

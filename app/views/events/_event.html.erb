@@ -14,8 +14,7 @@
         <%= I18n.localize(event.end_date, :format => ("%d %B %Y")) %></p>
       <p><%= event.starts_at.strftime("%H:%M") %> - <%= event.ends_at.strftime("%H:%M") %></p>
     </div>
-    <div class="event-part" id="event-additional">
-    </div>
+
     <div class="event-part" id="event-button">
       <%= link_to 'Show', [event.city, event], class: 'btn btn-info' %>
       <%= link_to 'Edit', edit_city_event_path(event.city, event), class: 'btn btn-warning' %>

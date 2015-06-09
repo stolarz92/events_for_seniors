@@ -7,7 +7,11 @@ class ApplicationController < ActionController::Base
 
 
   def set_city
-    @city = City.find(params[:city_id]) if params[:city_id]
+    if params[:search]
+      @city = City.find_by name: params[:search]
+    else
+      @city = @event.city
+    end
   end
 
   protected

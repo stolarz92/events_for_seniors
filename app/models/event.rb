@@ -1,5 +1,4 @@
 class Event < ActiveRecord::Base
-  include Filterable
   belongs_to :city
   belongs_to :category
   has_attached_file :image,
