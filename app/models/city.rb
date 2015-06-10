@@ -8,6 +8,7 @@ class City < ActiveRecord::Base
 
   def filtered_events(params)
     result = events
+    params[:start_date] = params[:start_date].to_date.strftime("%Y-%m-%d")
     sliced_params(params).each do |key, value|
       result = result.filter(key,value)
     end

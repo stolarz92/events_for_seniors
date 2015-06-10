@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    if params[:search] && params[:date] && @city
+    if params[:search] && params[:start_date] && @city
       @events = @city.filtered_events(params)
       @categories = Category.all
     end

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div id="events-top-belt">
   <% if @city.present? %>
-      <h1>Wydarzenia w dniu <%= params[:date] %> w mieście <%= @city.name %></h1>
+      <h1>Wydarzenia w dniu <%= params[:start_date] %> w mieście <%= @city.name %></h1>
   <% else %>
       <p>To miasto nie istnieje w bazie.</p>
   <% end %>
@@ -12,13 +12,12 @@
       <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
         <%= render 'events/partials/categories_sidebar' %>
       </div>
-      <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
-        <%= render 'events/partials/events_fields_description' %>
-        <%= render @events %>
+      <div class="event-list-items col-xs-12 col-sm-9 col-md-9 col-lg-9">
+          <%= render @events %>
       </div>
     </div>
     <%= link_to 'New Event', new_event_path %>
 <% else %>
-    <p>W dniu <%= params[:date] %> nie ma żadnych wydarzeń w mieście <%= params[:search] %>.</p>
+    <p>W dniu <%= params[:start_date] %> nie ma żadnych wydarzeń w mieście <%= params[:search] %>.</p>
 <% end %>
 
