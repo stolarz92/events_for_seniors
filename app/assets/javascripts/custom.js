@@ -18,9 +18,17 @@ $('document').ready(function() {
             'format': 'dd-mm-yyyy',
             'autoclose': true
         });
+
+/* Datepicker for changing date in events */
+        $('.date').datepicker({
+            'language': "pl",
+            'todayHighlight': true,
+            'format': 'dd-mm-yyyy',
+            'autoclose': true
+        })
     }
 
-    /* Search date */
+/* Search date */
     if ($('body.homepage').length) {
         $('.date').datepicker({
             'language': "pl",

@@ -1,0 +1,46 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Twoje wyszukiwanie</h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <%= form_tag events_path, :method => 'get', id: 'search-form', class: 'form-inline' do %>
+          <div class="form-group">
+            <label class="sr-only" for="place">Name</label>
+            <%#= autocomplete_field_tag :search, params[:search], autocomplete_city_name_cities_path %>
+            <%= text_field_tag :search,
+                               params[:search],
+                               class: 'form-control',
+                               placeholder: 'Kraków',
+                               type: 'search',
+                               data: {
+                                       autocomplete: homepage_autocomplete_city_name_path
+                               }
+            %>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="date">Email</label>
+            <%= text_field_tag :start_date,
+                               params[:start_date],
+                               placeholder: 'Kliknij, aby wybrać datę',
+                               class: 'form-control date',
+                               :data => {
+                                       provide: 'datepicker'
+                               }
+            %>
+          </div>
+          <%= submit_tag 'Szukaj',:name => nil, class: 'btn btn-danger' %>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $(".date").datepicker({
+            'language': "pl",
+            'todayHighlight': true,
+            'format': 'dd-mm-yyyy',
+            'autoclose': true
+        })
+    });
+</script>
