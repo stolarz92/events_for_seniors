@@ -100,4 +100,8 @@ class EventsController < ApplicationController
         :effort
     )
   end
+
+  def last_page
+    session[:last_page] = request.env['HTTP_REFERER']
+  end
 end
