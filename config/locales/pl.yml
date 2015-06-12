@@ -4,3 +4,7 @@ pl:
       app_name: "Wydarzenia dla seniorów"
     navbar:
       app_name: "Wydarzenia dla seniorów"
+
+  will_paginate:
+    previous_label: "Poprzednia strona"
+    next_label: "Następna strona"

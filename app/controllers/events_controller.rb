@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     if params[:search] && params[:start_date] && @city
-      @events = @city.filtered_events(params)
+      @events = @city.filtered_events(params).paginate(:page => params[:page], :per_page => 10)
       @categories = Category.all
     end
   end

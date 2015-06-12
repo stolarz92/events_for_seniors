@@ -39,6 +39,8 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'faker', '~> 1.4.3'
 # Paperclip
 gem 'paperclip', '~> 4.2'
+gem 'will_paginate', '~> 3.0.6'
+gem 'will_paginate-bootstrap'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
