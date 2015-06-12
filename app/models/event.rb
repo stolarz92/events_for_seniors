@@ -1,6 +1,7 @@
 class Event < ActiveRecord::Base
   belongs_to :city
   belongs_to :category
+
   has_attached_file :image,
                     :styles => {
                         :thumb    => ['200x200#',  :jpg, :quality => 70],
@@ -19,5 +20,6 @@ class Event < ActiveRecord::Base
                        :size => { :in => 0..4.megabytes },
                        :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/
                        }
+
 
 end

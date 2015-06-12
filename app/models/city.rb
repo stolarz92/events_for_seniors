@@ -18,7 +18,7 @@ class City < ActiveRecord::Base
   private
 
   def sliced_params params
-    params.slice(:category_id, :start_date, :cost)
+    params.slice(:category_id, :start_date, :cost, :effort)
   end
 
 end

@@ -70,16 +70,25 @@
                             {class: 'form-control'}) %>
     </div>
     <div class="form-group">
-      <%= f.label :contact %>
+      <%= f.label :phone_number %>
       <%= f.text_field :contact, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :cost %>
-      <%= f.text_field :cost, class: 'form-control' %>
+      <%= f.label :cost %><br />
+      <%= f.label :cost, 'Darmowe', :value => '1' %>
+      <%= f.radio_button :cost, '1' %>
+      <%= f.label :cost, 'Płatne', value: '2' %>
+      <%= f.radio_button :cost, '2' %>
     </div>
     <div class="form-group">
       <%= f.label :effort %>
-      <%= f.text_field :effort, class: 'form-control' %>
+      <br />
+      <%= f.label :effort, 'Łatwe', :value => '1', class: "effort_label" %>
+      <%= f.radio_button :effort, '1' %>
+      <%= f.label :effort, 'Średnie', :value => '2', class: "effort_label" %>
+      <%= f.radio_button :effort, 'Medium' %>
+      <%= f.label :effort, 'Wymagające', :value => '3', class: "effort_label" %>
+      <%= f.radio_button :effort, 'Hard' %>
     </div>
     <div class="form-group">
       <%= f.label :website %>

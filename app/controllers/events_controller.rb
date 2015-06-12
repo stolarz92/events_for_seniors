@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+  include EventsHelper
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :set_city, only: [:index, :show, :edit, :update, :destroy]
 

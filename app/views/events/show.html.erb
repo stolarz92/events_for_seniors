@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+<% if @event.present? %>
 <div class="row">
   <h1><%= @event.name %></h1>
   <div class="row">
@@ -39,6 +40,10 @@
         <td><%= @event.cost %></td>
       </tr>
       <tr>
+        <th>Wysiłek</th>
+        <td><%= @event.effort %></td>
+      </tr>
+      <tr>
         <th>Dojazd</th>
         <td>Kraków Arena</td>
       </tr>
@@ -76,3 +81,7 @@
   <%= render 'events/partials/similar' %>
 </div>
 
+<% else %>
+
+<p>Wydarzenie nie istnieje</p>
+<% end %>

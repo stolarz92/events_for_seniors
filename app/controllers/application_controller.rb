@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
 
   def set_city
@@ -29,5 +30,10 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     { locale: I18n.locale }
+  end
+
+  def record_not_found
+    flash[:alert] = 'Ten rekord nie istnieje'
+    redirect_to action: :index
   end
 end
