@@ -2,6 +2,9 @@ class Event < ActiveRecord::Base
   belongs_to :city
   belongs_to :category
 
+  default_scope { order('starts_at ASC') }
+
+
   has_attached_file :image,
                     :styles => {
                         :thumb    => ['200x200#',  :jpg, :quality => 70],
