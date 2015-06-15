@@ -5,14 +5,15 @@
   <div class="panel-body">
     <ul>
       <% @categories.each do |category| %>
-          <li class="<%=  "category-active" if category.id == params[:category_id] %>">
+          <li class="<%=  "category-active" if category.id == params[:category_id] %> list-unstyled">
             <%= link_to category.name, events_path(
                                              :search => params[:search],
                                              :start_date => params[:start_date],
                                              :category_id => category.id,
                                              :effort => params[:effort],
                                              :cost => params[:cost]
-                                     )
+                                     ),
+																		 :class => 'btn btn-lg btn-default'
             %>
           </li>
       <% end %>
@@ -23,7 +24,8 @@
                                            :category_id => nil,
                                            :effort => params[:effort],
                                            :cost => params[:cost]
-                                   )
+                                   ),
+																	 :class => 'btn btn-lg btn-danger'
           %>
       <% end %>
     </ul>
