@@ -1,19 +1,15 @@
 <div class="row event-list-item">
-<div class="event-part col-xs-3 col-sm-3 col-md-3 col-lg-3" id="event-image">
-      <%= image_tag event.image.url(:thumb), :class => "responsive" %>
-  </div>
-  <div class="event-info col-xs-8 col-sm-8 col-md-7 col-lg-7">
-      <h3 class="event-part" id="event-title"><%= event.name %></h3>
-      <p class="event-part" id="event-location"><%= event.location %></p>
-      <p class="event-part" id="event-time"><%= I18n.localize(event.start_date, :format => ("%d %B %Y")) %> -
-        <%= I18n.localize(event.end_date, :format => ("%d %B %Y")) %></p>
-      <p class="event-part" id="event-time"><%= event.starts_at.strftime("%H:%M") %> - <%= event.ends_at.strftime("%H:%M") %></p>
-  </div>
-  <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2">
-    <div class="event-part" id="event-button">
-      <%= link_to 'Show', [event.city, event], class: 'btn btn-info' %>
-      <%= link_to 'Edit', edit_city_event_path(event.city, event), class: 'btn btn-warning' %>
-      <%= link_to 'Destroy', [event.city, event], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
-    </div>
-  </div>
+	<div class="well">
+		<div class="event-part col-xs-4 col-sm-3 event-image">
+	      <%= image_tag event.image.url(:thumb), :class => "img-responsive" %>
+	  </div>
+	  <div class="event-info col-xs-8 col-sm-9">
+	      <h3><%= event.name %></h3>
+	      <p><strong><i class="fa fa-map-marker"></i> <%= event.location %></strong></p>
+	      <p><i class="fa fa-calendar"></i> <%= I18n.localize(event.start_date, :format => ("%d %B %Y")) %> -
+	        <%= I18n.localize(event.end_date, :format => ("%d %B %Y")) %></p>
+	      <p><<i class="fa fa-clock-o"></i> %= event.starts_at.strftime("%H:%M") %> - <%= event.ends_at.strftime("%H:%M") %></p>
+				<p><%= link_to '<i class="fa fa-eye"></i> Show'.html_safe, [event.city, event], class: 'btn btn-info btn-large' %></p>
+	  </div>
+	</div>
 </div>

@@ -1,25 +1,28 @@
 <p id="notice"><%= notice %></p>
-<div id="events-top-belt">
-  <% if @city.present? %>
-      <h1>Wydarzenia w dniu <%= params[:start_date] %> w mieście <%= @city.name %></h1>
-  <% else %>
-      <p>To miasto nie istnieje w bazie.</p>
-  <% end %>
+<div class="row">
+	<div id="events-top-belt" class="col-md-12">
+	  <% if @city.present? %>
+	      <h1>Wydarzenia w dniu <%= params[:start_date] %> w mieście <%= @city.name %></h1>
+	  <% else %>
+	      <p>To miasto nie istnieje w bazie.</p>
+	  <% end %>
+	</div>
 </div>
+
 
 <% if @events.present? %>
     <div class="row">
-      <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+      <div class="col-sm-3">
         <%= render 'events/partials/search_panel' %>
         <%= render 'events/partials/categories_sidebar_filter' %>
         <%= render 'events/partials/cost_sidebar_filter' %>
         <%= render 'events/partials/effort_sidebar_filter' %>
       </div>
-      <div class="event-list-items col-xs-12 col-sm-9 col-md-9 col-lg-9">
+      <div class="event-list-items col-sm-9">
         <%= render @events %>
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
-          <%= will_paginate @events, renderer: BootstrapPagination::Rails, :class => "pagination-lg" %>
-        </div>
+      </div>
+      <div class="col-sm-12 text-center">
+        <%= will_paginate @events, renderer: BootstrapPagination::Rails, :class => "pagination-lg" %>
       </div>
     </div>
     <%= link_to 'New Event', new_event_path %>
