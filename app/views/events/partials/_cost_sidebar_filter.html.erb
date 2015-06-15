@@ -1,0 +1,30 @@
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Koszt</h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      <% cost.each do |key, value| %>
+          <li class="<%=  "category-active" if cost == params[:cost] %>">
+            <%= link_to key, events_path(
+                                   :search => params[:search],
+                                   :start_date => params[:start_date],
+                                   :category_id => params[:category_id],
+                                   :effort => params[:effort],
+                                   :cost => value
+                           )
+            %></li>
+      <% end %>
+      <% if params[:cost] %>
+          <%= link_to 'Usuń filtr', events_path(
+                                          :search => params[:search],
+                                          :start_date => params[:start_date],
+                                          :category_id => params[:category_id],
+                                          :effort => params[:effort],
+                                          :cost => nil
+                                  )
+          %>
+      <% end %>
+    </ul>
+  </div>
+</div>
