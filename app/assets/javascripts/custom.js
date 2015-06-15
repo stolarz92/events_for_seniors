@@ -24,7 +24,8 @@ $('document').ready(function() {
             'language': "pl",
             'todayHighlight': true,
             'format': 'dd-mm-yyyy',
-            'autoclose': true
+            'autoclose': true,
+            'defaultDate' : 'asd'
         })
     }
 

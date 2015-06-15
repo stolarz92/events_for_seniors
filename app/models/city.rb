@@ -12,6 +12,7 @@ class City < ActiveRecord::Base
     sliced_params(params).each do |key, value|
       result = result.filter(key,value)
     end
+    params[:start_date] = params[:start_date].to_date.strftime("%d-%m-%Y")
     result
   end
 
