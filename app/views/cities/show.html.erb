@@ -1,2 +1,24 @@
-<h1><%= @city.name %></h1>
-<%= image_tag @city.image %>
+<div class="row">
+  <h1><%= @city.name %> <button class="btn btn-primary">Zmień miasto</button></h1>
+  <div class="col-sm-12">
+    <%= image_tag @city.image, class: "img-responsive" %>
+  </div>
+
+  <hr class="hr-line"/>
+
+  <div class="row row-centered">
+    <div id="propositions" class="homepage-box">
+      <%= render 'cities/partials/propositions' %>
+    </div>
+  </div>
+  <%= link_to 'Zobacz wszystkie dzisiejsze wydarzenia', city_events_path(@city, :start_date => @date),
+              class: 'btn btn-primary btn-lg' %>
+
+  <hr class="hr-line"/>
+
+  <div class="row row-centered">
+    <div id="newest-events" class="homepage-box">
+      <%= render 'cities/partials/newest' %>
+    </div>
+  </div>
+</div>

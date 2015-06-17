@@ -6,16 +6,15 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    if params[:search] && params[:start_date] && @city
       @events = @city.filtered_events(params).paginate(:page => params[:page], :per_page => 10)
       @categories = Category.all
-    end
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
     @category = @event.category
+    similar_events
   end
 
   # GET /events/new
@@ -73,14 +72,6 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def set_city
-    if params[:search]
-      @city = City.find_by name: params[:search]
-    else
-      @city = @event.city
-    end
-  end
-
   # Never trust parameters from the scary internet, only allow the white list through.
   def event_params
     params.require(:event).permit(
@@ -99,9 +90,5 @@ class EventsController < ApplicationController
         :category_id,
         :effort
     )
-  end
-
-  def last_page
-    session[:last_page] = request.env['HTTP_REFERER']
   end
 end

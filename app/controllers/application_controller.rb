@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
     if params[:search]
       @city = City.find_by name: params[:search]
     else
-      @city = @event.city
+      @city = City.find(params[:city_id])
     end
   end
 
