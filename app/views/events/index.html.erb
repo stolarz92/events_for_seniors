@@ -13,10 +13,7 @@
 <% if @events.present? %>
     <div class="row">
       <div class="col-sm-3">
-        <%= render 'events/partials/search_panel' %>
-        <%= render 'events/partials/categories_sidebar_filter' %>
-        <%= render 'events/partials/cost_sidebar_filter' %>
-        <%= render 'events/partials/effort_sidebar_filter' %>
+        <%= render 'events/partials/filtering' %>
       </div>
       <div class="event-list-items col-sm-9">
         <%= render @events %>

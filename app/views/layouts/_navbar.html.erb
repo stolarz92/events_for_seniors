@@ -12,6 +12,11 @@
       <%= link_to t('.app_name'), root_path, class: 'navbar-brand' %>
     </div>
     <div class="collapse navbar-collapse" id="collapsibleMenu">
+      <% if params[:search].present? %>
+      <ul class="nav navbar-nav navbar-left">
+        <%= render 'layouts/partials/search_panel' %>
+      </ul>
+      <% end %>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">Pomoc</a></li>
         <li><a href="#">Jezyk</a></li>

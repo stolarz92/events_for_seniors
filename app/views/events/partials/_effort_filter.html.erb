@@ -1,0 +1,29 @@
+<div class="filter-box">
+  <h4>Wysiłek</h4>
+  <ul>
+    <% effort.each do |key, value| %>
+        <% if value.to_s == params[:effort] %>
+            <li class="category-active">
+        <% else %>
+            <li>
+        <% end %>        <%= link_to key, events_path(
+                                                :search => params[:search],
+                                                :start_date => params[:start_date],
+                                                :category_id => params[:category_id],
+                                                :effort => value,
+                                                :cost => params[:cost]
+                                        )
+  %></li>
+    <% end %>
+    <% if params[:effort] %>
+        <%= link_to 'Usuń filtr', events_path(
+                                        :search => params[:search],
+                                        :start_date => params[:start_date],
+                                        :category_id => params[:category_id],
+                                        :effort => nil,
+                                        :cost => params[:cost]
+                                )
+        %>
+    <% end %>
+  </ul>
+</div>
