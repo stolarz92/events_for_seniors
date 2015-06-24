@@ -30,3 +30,13 @@
     <p>W dniu <%= params[:start_date] %> nie ma żadnych wydarzeń w mieście <%= params[:search] %>.</p>
 <% end %>
 
+<script>
+    if ($('body.events').length) {
+        $('.date').datepicker({
+            'language': "pl",
+            'todayHighlight': true,
+            'format': 'dd-mm-yyyy',
+            'autoclose': true
+        })
+    }
+</script>
