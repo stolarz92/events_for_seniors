@@ -1,7 +1,7 @@
 <h2 class="no-margin-top">Co możesz robić dziś w mieście <%= @city.name %>?</h2>
 <% @today_events.each do |event| %>
-<div class="col-xs-12 col-sm-6 centered">
-  <h4><%= event.name %></h4>
+<div class="col-xs-12 col-sm-6 centered event-item">
+  <h4 class="event-name"><%= link_to event.name, city_event_path(@city, event)  %></h4>
   <%= link_to city_event_path(@city, event) do %>
       <%= image_tag event.image(:thumb), class: 'img-responsive img-centered' %>
       <% end %>

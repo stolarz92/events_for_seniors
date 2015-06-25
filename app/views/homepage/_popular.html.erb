@@ -1,7 +1,7 @@
 <h2>Najpopularniejsze miasta</h2>
 <% @cities.each do |city| %>
     <div class="col-xs-6 col-sm-6 col-md-3 col-lg-3">
-      <h3><%= city.name %></h3>
+      <h3><%= link_to city.name, city_path(city) %></h3>
       <%= link_to city_path(city) do %>
           <%= image_tag city.image(:thumb) %>
       <% end %>

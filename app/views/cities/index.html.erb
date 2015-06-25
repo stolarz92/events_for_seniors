@@ -1,10 +1,14 @@
 <div class="row">
-  <% @cities.each do |city| %>
-  <div class="col-xs-6 col-sm-4 col-md-3">
-    <h3><%= city.name %></h3>
-    <%= link_to city_path(city) do %>
-        <%= (image_tag city.image(:thumb)) %>
-    <% end %>
+  <div id="events-top-belt" class="col-md-12">
+    <h1>Odkryj wspaniałe miejsca pełne interesujących wydarzeń!</h1>
+    <hr class="hr-line"/>
   </div>
-      <% end %>
+  <% @cities.each do |city| %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <h3><%=link_to city.name, cities_path(city) %></h3>
+        <%= link_to city_path(city) do %>
+            <%= (image_tag city.image(:thumb)) %>
+        <% end %>
+      </div>
+  <% end %>
 </div>

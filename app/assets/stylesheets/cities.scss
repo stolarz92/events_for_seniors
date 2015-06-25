@@ -6,7 +6,8 @@ h2.no-margin-top {
 }
 
 .button-see-all {
-  margin-top: 25px;
+  margin-top: 5%;
+  margin-bottom: 5%;
   text-align: center;
 }
 
@@ -16,4 +17,23 @@ h2.no-margin-top {
 
 .centered {
   text-align: center;
+}
+
+
+
+.event-name {
+  min-height: 38px;
+}
+
+.event-item {
+}
+
+@media screen and (max-width: 992px) {
+  .event-item {
+    margin-top: 20px;
+  }
+  .today-city-events {
+      margin-top: 30px;
+  }
+
 }

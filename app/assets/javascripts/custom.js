@@ -37,6 +37,19 @@ var ready = function() {
             'autoclose': true
         })
     }
+/* Increasing/deacreasing font-size*/
+        $('#incfont').click(function(){
+            curSize= parseInt($('#body').css('font-size')) + 2;
+            if(curSize<=20)
+            $('#body').css('font-size', curSize);
+
+        });
+        $('#decfont').click(function(){
+            curSize= parseInt($('#body').css('font-size')) - 2;
+            if(curSize>=12)
+
+            $('#body').css('font-size', curSize);
+        });
 
 };
 
