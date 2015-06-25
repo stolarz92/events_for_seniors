@@ -1,18 +1,15 @@
 class CitiesController < ApplicationController
   include CitiesHelper
-  before_action :set_city, only: [:index]
 
   def index
-    if params[:search] && params[:date] && @city
-      date = params[:date].to_date
-      @events = @city.events.where(start_date: date)
-    end
+    @cities = City.all
   end
 
   def show
-    date = get_date
+    @date = get_date
     @city = City.find(params[:id])
-    @today_events = @city.events.where(start_date: date).limit(4)
+    @cities = City.all
+    @today_events = @city.events.where(start_date: @date).limit(2)
     @newest = @city.events.order(:created_at).limit(4)
   end
 

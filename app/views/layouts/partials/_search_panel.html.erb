@@ -1,7 +1,6 @@
 <%= form_tag events_path, :method => 'get', class: 'navbar-form navbar-left', role:'search' do %>
     <div class="form-group">
       <label class="sr-only" for="place">Name</label>
-      <%#= autocomplete_field_tag :search, params[:search], autocomplete_city_name_cities_path %>
       <%= text_field_tag :search,
                          params[:search],
                          class: 'form-control',
@@ -15,16 +14,15 @@
     <div class="form-group">
       <label class="sr-only" for="date">Date</label>
       <%= text_field_tag :start_date,
-                         nil,
-                         placeholder: params[:start_date],
+                         params[:start_date],
+                         placeholder: nil,
                          class: 'form-control date short',
                          :data => {
                                  provide: 'datepicker'
                          }
       %>
     </div>
-    <%# submit_tag '<i class="fa fa-search"></i> Szukaj'.html_safe, :name => nil, class: 'btn btn-info btn-lg' %>
-    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i>Zmień</button>
+    <button type="submit" class="btn btn-info"><i class="fa fa-search"></i> Szukaj</button>
 <% end %>
 
 <script type="text/javascript">

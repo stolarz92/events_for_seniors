@@ -7,8 +7,8 @@ body { padding-top: 70px; }
 /* centered columns styles */
 .row-centered {
   text-align:center;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
 }
 .col-centered {
   display:inline-block;
@@ -20,12 +20,19 @@ body { padding-top: 70px; }
 }
 
 /* search */
+#search-form {
+  padding-top: 27px;
+}
 .search-description {
   margin-bottom: 5%;
 }
 
 .search-field {
   text-align: center;
+  height: 100px;
+  background-color: chocolate;
+  border-radius: 20px;
+
 }
 
 /* hr line */

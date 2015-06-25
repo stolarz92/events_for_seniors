@@ -1,3 +1,19 @@
 // Place all the styles related to the Cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+h2.no-margin-top {
+  margin-top: 0;
+}
+
+.button-see-all {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.img-centered {
+  margin: 0 auto;
+}
+
+.centered {
+  text-align: center;
+}

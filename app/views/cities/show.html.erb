@@ -1,24 +1,30 @@
 <div class="row">
-  <h1><%= @city.name %> <button class="btn btn-primary">Zmień miasto</button></h1>
+
   <div class="col-sm-12">
-    <%= image_tag @city.image, class: "img-responsive" %>
-  </div>
+    <div class="col-sm-3">
+      <h1><%= @city.name %></h1>
+    </div>
 
-  <hr class="hr-line"/>
-
-  <div class="row row-centered">
-    <div id="propositions" class="homepage-box">
-      <%= render 'cities/partials/propositions' %>
+    <div class="col-xs-3">
     </div>
   </div>
-  <%= link_to 'Zobacz wszystkie dzisiejsze wydarzenia', city_events_path(@city, :start_date => @date),
-              class: 'btn btn-primary btn-lg' %>
 
-  <hr class="hr-line"/>
+  <div class="col-sm-12 col-md-7">
+    <%= image_tag @city.image(:large), class: "img-responsive" %>
+  </div>
 
-  <div class="row row-centered">
-    <div id="newest-events" class="homepage-box">
-      <%= render 'cities/partials/newest' %>
-    </div>
+  <div class="col-sm-12 col-md-5 centered">
+    <%= render 'cities/partials/propositions' %>
+  </div>
+
+</div>
+
+
+
+<hr class="hr-line"/>
+
+<div class="row row-centered">
+  <div id="newest-events" class="homepage-box">
+    <%= render 'cities/partials/newest' %>
   </div>
 </div>
