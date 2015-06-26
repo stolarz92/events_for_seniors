@@ -6,9 +6,15 @@
       </div>
       <div class="col-xs-8 col-sm-9">
         <%= link_to '<i class="fa fa-eye"></i> Show'.html_safe, [event.city, event], class: 'btn btn-info btn-lg pull-right' %>
-        <%= link_to '<i class="fa fa-eye"></i> Zapamiętaj'.html_safe, [event.city, event], class: 'btn btn-success btn-lg pull-right' %>
-
-        <h3><%= event.name %></h3>
+        <% unless current_user == event.user %>
+            <div id="follow_form">
+              <% if current_user.attendances?(event) %>
+                  <%= render 'unfollow', event: event %>
+              <% else %>
+                  <%= render 'follow', event: event %>
+              <% end %>
+            </div>
+        <% end %>        <h3><%= event.name %></h3>
         <p><%= event.category.name %></p>
         <p><%= fa_icon 'map-marker lg' %> <%= event.location %></p>
         <p><%= fa_icon 'calendar lg' %> <%= I18n.localize(event.start_date, :format => ("%d %B %Y")) %> -

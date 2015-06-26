@@ -1,1 +1,5 @@
 <h2>Witaj <%= current_user.email %>!</h2>
+<div class="col-xs-12">
+  <%= link_to 'Twoje zapisane wydarzenia', attendances_user_path(current_user) %>
+  <!--<%#= link_to 'Twoje wydarzenia', user_events_path(current_user) %>-->
+</div>

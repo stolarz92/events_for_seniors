@@ -17,18 +17,18 @@ class User < ActiveRecord::Base
   def admin
   end
 
-  # Follows a user.
+  # Follows an event.
   def follow(event)
     event_relationships.create(event_id: event.id)
   end
 
-  # Unfollows a user.
+  # Unfollows an event.
   def unfollow(event)
     event_relationships.find_by(event_id: event.id).destroy
   end
 
-  # Returns true if the current user is following the other user.
-  def following?(event)
-    following.include?(event)
+  # Returns true if the current user is following the event.
+  def attendances?(event)
+    attendances.include?(event)
   end
 end
