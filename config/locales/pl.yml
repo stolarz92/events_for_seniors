@@ -6,5 +6,6 @@ pl:
       app_name: "Wydarzenia dla seniorów"
 
   will_paginate:
-    previous_label: "Poprzednia strona"
+    previous_label: "
+    Poprzednia strona"
     next_label: "Następna strona"

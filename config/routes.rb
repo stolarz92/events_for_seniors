@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+
+  devise_scope :user do
+    get "sign_in", to: "devise/sessions#new"
+    get "profile", to: "users#show"
+  end
+
   scope'(:locale)' do
     get '/' => 'homepage#index'
     get 'homepage/autocomplete_city_name'
