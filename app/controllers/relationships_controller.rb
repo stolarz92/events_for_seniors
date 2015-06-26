@@ -1,4 +1,5 @@
 class RelationshipsController < ApplicationController
+  before_action :logged_in_user
   def create
     event = Event.find(params[:event_id])
     current_user.follow(event)

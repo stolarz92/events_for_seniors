@@ -5,38 +5,30 @@
         <%= image_tag event.image.url(:thumb), :class => "img-responsive" %>
       </div>
       <div class="col-xs-8 col-sm-9">
-        <%= link_to '<i class="fa fa-eye"></i> Show'.html_safe, [event.city, event], class: 'btn btn-info btn-lg pull-right' %>
-        <% unless current_user == event.user %>
-            <div id="follow_form">
-              <% if current_user.attendances?(event) %>
-                  <%= render 'unfollow', event: event %>
-              <% else %>
-                  <%= render 'follow', event: event %>
-              <% end %>
-            </div>
-        <% end %>        <h3><%= event.name %></h3>
+        <%= link_to '<i class="fa fa-eye"></i> Szczegóły'.html_safe, [event.city, event], class: 'btn btn-info btn-lg pull-right' %>
+        <% if user_signed_in?  %>
+            <% unless current_user == event.user %>
+                <div id="follow_form">
+                  <% if current_user.attendances?(event) %>
+                      <%= render 'unfollow', event: event %>
+                  <% else %>
+                      <%= render 'follow', event: event %>
+                  <% end %>
+                </div>
+            <% end %>
+        <% end %>
+        <h3><%= event.name %></h3>
         <p><%= event.category.name %></p>
         <p><%= fa_icon 'map-marker lg' %> <%= event.location %></p>
         <p><%= fa_icon 'calendar lg' %> <%= I18n.localize(event.start_date, :format => ("%d %B %Y")) %> -
           <%= I18n.localize(event.end_date, :format => ("%d %B %Y")) %></p>
         <p><%= fa_icon 'clock-o lg' %> <%= event.starts_at.strftime("%H:%M") %> - <%= event.ends_at.strftime("%H:%M") %></p>
-        <p>Wysiłek:
-          <% if event.effort == '1' %>
-              <%= fa_icon 'circle lg' %>
-              <%= fa_icon 'circle-o lg' %>
-              <%= fa_icon 'circle-o lg' %>
-          <% elsif event.effort == '2' %>
-              <%= fa_icon 'circle lg' %>
-              <%= fa_icon 'circle lg' %>
-              <%= fa_icon 'circle-o lg' %>
-          <% else %>
-              <%= fa_icon 'circle lg' %>
-              <%= fa_icon 'circle lg' %>
-              <%= fa_icon 'circle lg' %>
-          <% end %></p>
-        <p>Koszt: <% if event.cost == '1' %> Bezpłatne
-          <% elsif event.cost == '2' %> Płatne
-          <% end %></p>
+        <p>
+          Wysiłek: <%= render 'events/partials/effort_view', effort: event.effort %>
+        </p>
+        <p>
+          Koszt:<%= render 'events/partials/cost_view', cost: event.cost %>
+        </p>
       </div>
     </div>
   </div>

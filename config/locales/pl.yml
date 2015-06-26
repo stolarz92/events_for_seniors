@@ -9,3 +9,11 @@ pl:
     previous_label: "
     Poprzednia strona"
     next_label: "Następna strona"
+
+  events:
+    partials:
+      cost_filter:
+        free: Bezpłatne
+        paid: Płatne
+
+

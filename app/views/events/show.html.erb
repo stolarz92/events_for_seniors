@@ -1,88 +1,100 @@
 <p id="notice"><%= notice %></p>
 <% if @event.present? %>
-<div class="row">
-  <%= link_to 'Back', :back, class: 'btn btn-info' %>
-  <h1><%= @event.name %></h1>
-  <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <ul class="list-inline">
-        <% if @city %>
-            <li>Miasto: <%= @city.name %></li>
-        <% end %>
-        <% if @category %>
-            <li>Kategoria: <%= @category.name %></li>
-        <% end  %>
-      </ul>
+    <div class="row">
+      <%= link_to 'Powrót', :back, class: 'btn btn-info' %>
+      <h1><%= @event.name %></h1>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="list-inline">
+            <% if @city %>
+                <li>Miasto: <%= @city.name %></li>
+            <% end %>
+            <% if @category %>
+                <li>Kategoria: <%= @category.name %></li>
+            <% end  %>
+          </ul>
+          <% if user_signed_in?  %>
+              <% unless current_user == @event.user %>
+                  <div id="follow_form">
+                    <% if current_user.attendances?(@event) %>
+                        <%= render 'unfollow', event: @event %>
+                    <% else %>
+                        <%= render 'follow', event: @event %>
+                    <% end %>
+                  </div>
+              <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <h2>Podstawowe informacje</h2>
+        <table class="table">
+          <thead></thead>
+          <tbody>
+          <tr>
+            <th>Miejsce </th>
+            <td><%= @event.location %></td>
+          </tr>
+          <tr>
+            <th>Data rozpoczęcia</th>
+            <td><%= I18n.localize(@event.start_date, :format => ("%d %B %Y")) %></td>
+          </tr>
+          <tr>
+            <th>Data zakończenia</th>
+            <td><%= I18n.localize(@event.end_date, :format => ("%d %B %Y")) %></td>
+          </tr>
+          <tr>
+            <th>Czas</th>
+            <td><%= @event.starts_at.strftime("%H:%M") %> - <%= @event.ends_at.strftime("%H:%M") %></td>
+          </tr>
+          <tr>
+            <th>Koszt</th>
+            <td>
+              <%= render 'events/partials/cost_view', cost: @event.cost %>
+            </td>
+          </tr>
+          <tr>
+            <th>Wysiłek</th>
+            <td><%= render 'events/partials/effort_view', effort: @event.effort %>
+            </td>
+          </tr>
+          <tr>
+            <th>Dojazd</th>
+            <td>Kraków Arena</td>
+          </tr>
+          <tr>
+            <th>Kontakt</th>
+            <td><%= @event.contact %></td>
+          </tr>
+          <tr>
+            <th>Strona internetowa</th>
+            <td><%= @event.website %></td>
+          </tr>
+          </tbody>
+          <tfoot></tfoot>
+        </table>
+      </div>
+
+
+      <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <%= image_tag @event.image.url(:large), class: 'img-responsive'%>
+      </div>
     </div>
-  </div>
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    <h2>Podstawowe informacje</h2>
-    <table class="table">
-      <thead></thead>
-      <tbody>
-      <tr>
-        <th>Miejsce </th>
-        <td><%= @event.location %></td>
-      </tr>
-      <tr>
-        <th>Data rozpoczęcia</th>
-        <td><%= I18n.localize(@event.start_date, :format => ("%d %B %Y")) %></td>
-      </tr>
-      <tr>
-        <th>Data zakończenia</th>
-        <td><%= I18n.localize(@event.end_date, :format => ("%d %B %Y")) %></td>
-      </tr>
-      <tr>
-        <th>Czas</th>
-        <td><%= @event.starts_at.strftime("%H:%M") %> - <%= @event.ends_at.strftime("%H:%M") %></td>
-      </tr>
-      <tr>
-        <th>Koszt</th>
-        <td><%= @event.cost %></td>
-      </tr>
-      <tr>
-        <th>Wysiłek</th>
-        <td><%= @event.effort %></td>
-      </tr>
-      <tr>
-        <th>Dojazd</th>
-        <td>Kraków Arena</td>
-      </tr>
-      <tr>
-        <th>Kontakt</th>
-        <td><%= @event.contact %></td>
-      </tr>
-      <tr>
-        <th>Strona internetowa</th>
-        <td><%= @event.website %></td>
-      </tr>
-      </tbody>
-      <tfoot></tfoot>
-    </table>
-  </div>
 
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6">
+        <h2>Opis</h2>
+        <p><%= @event.description %></p>
+      </div>
 
-  <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-    <%= image_tag @event.image.url(:large), class: 'img-responsive'%>
-  </div>
-</div>
+    </div>
 
-<div class="row">
-  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6">
-    <h2>Opis</h2>
-    <p><%= @event.description %></p>
-  </div>
-
-  <div class="col-xs-12 col-sm-10 col-md-10 col-lg-6">
-    <h2>Mapa</h2>
-  </div>
-</div>
-
-<div class="row" id="similar">
-  <%= render 'events/partials/similar' %>
-</div>
+    <hr class="hr-line"/>
+    <div class="row" id="similar">
+      <%= render 'events/partials/similar' %>
+    </div>
 
 <% else %>
 
-<p>Wydarzenie nie istnieje</p>
+    <p>Wydarzenie nie istnieje</p>
 <% end %>

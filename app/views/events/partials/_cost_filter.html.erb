@@ -7,7 +7,7 @@
         <% else %>
             <li>
         <% end %>
-        <%= link_to key, events_path(
+        <%= link_to t(:"#{key}"), events_path(
                                :search => params[:search],
                                :start_date => params[:start_date],
                                :category_id => params[:category_id],
