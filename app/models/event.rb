@@ -1,6 +1,16 @@
 class Event < ActiveRecord::Base
   belongs_to :city
   belongs_to :category
+  belongs_to :user
+
+  has_many :user_relationships,
+           class_name:  "Relationship",
+           foreign_key: "event_id",
+           dependent:   :destroy
+
+  has_many :attendants,
+           through: :user_relationships,
+           source: :user
 
   default_scope { order('starts_at ASC') }
 

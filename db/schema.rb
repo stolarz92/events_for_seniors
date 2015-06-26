@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626133415) do
+ActiveRecord::Schema.define(version: 20150626165021) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -51,6 +51,17 @@ ActiveRecord::Schema.define(version: 20150626133415) do
     t.string   "effort",             limit: 255
     t.integer  "user_id",            limit: 4
   end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "event_id",   limit: 4
+    t.integer  "user_id",    limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "relationships", ["event_id", "user_id"], name: "index_relationships_on_event_id_and_user_id", unique: true, using: :btree
+  add_index "relationships", ["event_id"], name: "index_relationships_on_event_id", using: :btree
+  add_index "relationships", ["user_id"], name: "index_relationships_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "",    null: false
