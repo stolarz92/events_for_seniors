@@ -7,16 +7,12 @@ Rails.application.routes.draw do
     get "profile", to: "users#show"
   end
 
-  scope'(:locale)' do
-    get '/' => 'homepage#index'
-    get 'homepage/autocomplete_city_name'
+  get '/' => 'homepage#index'
+  get 'homepage/autocomplete_city_name'
 
-    resources :cities do
-      resources :events
-    end
+  resources :cities do
     resources :events
   end
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

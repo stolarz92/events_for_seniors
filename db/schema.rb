@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150626085343) do
+ActiveRecord::Schema.define(version: 20150626133415) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20150626085343) do
     t.datetime "image_updated_at"
     t.integer  "category_id",        limit: 4
     t.string   "effort",             limit: 255
+    t.integer  "user_id",            limit: 4
   end
 
   create_table "users", force: :cascade do |t|

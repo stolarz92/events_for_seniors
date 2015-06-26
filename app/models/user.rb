@@ -5,6 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,
          password_length: 4..20
 
+  has_many :events
+
   def admin
   end
 end

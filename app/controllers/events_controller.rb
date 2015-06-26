@@ -3,6 +3,9 @@ class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   before_action :set_city, only: [:index, :show, :edit, :update, :destroy]
 
+  has_and_belongs_to_many :users, :join_table => :users_events
+
+
   # GET /events
   # GET /events.json
   def index
@@ -88,7 +91,8 @@ class EventsController < ApplicationController
         :cost,
         :image,
         :category_id,
-        :effort
+        :effort,
+        :user_id
     )
   end
 end
