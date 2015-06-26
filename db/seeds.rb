@@ -111,9 +111,9 @@ def create_relationships
 
 end
 
-# create_admin
-# create_user
-# create_categories
-# create_cities
-# create_events
+create_admin
+create_user
+create_categories
+create_cities
+create_events
 create_relationships
