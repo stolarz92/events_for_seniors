@@ -1,0 +1,17 @@
+.h1 Skontaktuj się z nami!
+
+.col-xs-6.col-md-4.col-lg-3
+  %h3 Wydarzenia
+  %p ul. Limanowskiego 321
+  %p 32-300 Kraków
+  %p telefon: 12-345-67-89
+
+.col-xs-6.col-md-4.col-lg-3.pull-right
+  %form#footer-opinion-form
+    .form-group
+      %label.sr-only{:for => "opinion"} Wyraź swoją opinię
+      %textarea.form-control{:placeholder => "Napisz, co sądzisz o stronie", :rows => "3"}
+    .form-group
+      %label.sr-only{:for => "email"} Twój email
+      %input#email.form-control{:placeholder => "Twój email", :type => "email"}/
+    %button.btn.btn-warning{:type => "submit"} Wyślij opinię

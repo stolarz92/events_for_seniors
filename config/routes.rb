@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'static_pages/contact', as: :contact
+
   devise_for :users
 
   devise_scope :user do

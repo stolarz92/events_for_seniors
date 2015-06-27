@@ -6,8 +6,12 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    if @city
       @events = @city.filtered_events(params).paginate(:page => params[:page], :per_page => 10)
       @categories = Category.all
+    else
+      redirect_to root_path, alert: 'Nie ma takiego miasta, wybierz poprawne.'
+    end
   end
 
   # GET /events/1

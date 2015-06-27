@@ -164,3 +164,20 @@ body {
 .copyright {
   color: whitesmoke;
 }
+
+html, body {
+  height: 100%;
+}
+.wrapper {
+  min-height: 80%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+}
+.footer {
+  height: 10em;
+}
+
+.add-event {
+  margin-top: 20px
+}

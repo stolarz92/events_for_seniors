@@ -23,7 +23,6 @@
         <%= will_paginate @events, renderer: BootstrapPagination::Rails, :class => "pagination-lg" %>
       </div>
     </div>
-    <%= link_to 'New Event', new_event_path %>
 <% else %>
     <p>W dniu <%= params[:start_date] %> nie ma żadnych wydarzeń w mieście <%= params[:search] %>.</p>
 <% end %>

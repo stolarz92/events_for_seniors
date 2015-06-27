@@ -26,8 +26,7 @@
       <%= link_to 'Miasta', cities_path %></li>
       <li><a href="#" id="incfont">A+</a></li>
       <li><a href="#" id="decfont">A-</a></li>
-      <li><a href="#">Pomoc</a></li>
-      <li><a href="#">Kontakt</a></li>
+      <li><%= link_to 'Kontakt', contact_path %></li>
       <% if user_signed_in? %>
           <li><%= link_to 'Profil', profile_path %></li>
           <li><%= link_to "Wyloguj", destroy_user_session_path, {:method => :delete} %></li>
