@@ -1,9 +1,9 @@
 pl:
   layouts:
     application:
-      app_name: "Wydarzenia dla seniorów"
+      app_name: "Wydarzenia"
     navbar:
-      app_name: "Wydarzenia dla seniorów"
+      app_name: "Wydarzenia"
 
   will_paginate:
     previous_label: "

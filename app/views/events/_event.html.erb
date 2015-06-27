@@ -5,7 +5,7 @@
         <%= image_tag event.image.url(:thumb), :class => "img-responsive" %>
       </div>
       <div class="col-xs-8 col-sm-9">
-        <%= link_to '<i class="fa fa-eye"></i> Szczegóły'.html_safe, [event.city, event], class: 'btn btn-info btn-lg pull-right' %>
+        <%= link_to '<i class="fa fa-eye"></i> Szczegóły'.html_safe, [event.city, event], class: 'btn btn-primary btn-lg pull-right' %>
         <% if user_signed_in?  %>
             <% unless current_user == event.user %>
                 <div id="follow_form">

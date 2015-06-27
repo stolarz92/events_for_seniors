@@ -1,6 +1,6 @@
 <div class="filter-box">
   <h4>Kategorie</h4>
-<ul>
+<ul class="filter">
   <% @categories.each do |category| %>
       <% if category.id.to_s == params[:category_id] %>
           <li class="category-active">
@@ -13,12 +13,14 @@
                                          :category_id => category.id,
                                          :effort => params[:effort],
                                          :cost => params[:cost]
-                                 )
+                                 ),
+                    class: 'filter-button'
+
         %>
       </li>
   <% end %>
   <% if params[:category_id] %>
-      <%= link_to 'Usuń filtr', events_path(
+      <%= link_to 'Wyczyść filtr', events_path(
                                       :search => params[:search],
                                       :start_date => params[:start_date],
                                       :category_id => nil,

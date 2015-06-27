@@ -35,7 +35,8 @@ body {
 .search-field {
   text-align: center;
   height: 100px;
-  background-color: chocolate;
+//  background-image: image-url("9.png");
+  background-color: #008080;
   border-radius: 20px;
 
 }
@@ -75,27 +76,6 @@ body {
     h3{
     	margin-top:0;
     }
-  }
-
-  #event-image {
-//    width:200px;
-//    height: 200px;
-  }
-
-  #event-info {}
-
-  #event-title {
-    background-color: #666666;
-      margin-top: 0;
-  }
-  #event-location {
-    background-color: aquamarine;
-  }
-  #event-additional {
-    background-color: slateblue;
-  }
-  #event-button {
-    background-color: #730E15;
   }
 }
 /* Autocomplete*/
@@ -147,11 +127,6 @@ body {
   background-image: none;
 }
 
-/* Categories sidebar*/
-.category-active{
-  color: red;
-}
-
 /* New event form */
 .cost_label{
 
@@ -175,6 +150,10 @@ html, body {
   margin: 0 auto -4em;
 }
 .footer {
+  height: 10em;
+}
+
+.push {
   height: 10em;
 }
 

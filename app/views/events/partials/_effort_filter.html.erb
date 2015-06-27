@@ -1,22 +1,24 @@
 <div class="filter-box">
   <h4>Wysiłek</h4>
-  <ul>
+  <ul class="filter">
     <% effort.each do |key, value| %>
         <% if value.to_s == params[:effort] %>
             <li class="category-active">
         <% else %>
             <li>
-        <% end %>        <%= link_to key, events_path(
-                                                :search => params[:search],
-                                                :start_date => params[:start_date],
-                                                :category_id => params[:category_id],
-                                                :effort => value,
-                                                :cost => params[:cost]
-                                        )
+        <% end %><%= link_to key, events_path(
+                                        :search => params[:search],
+                                        :start_date => params[:start_date],
+                                        :category_id => params[:category_id],
+                                        :effort => value,
+                                        :cost => params[:cost]
+                                ),
+                             class: 'filter-button'
+
   %></li>
     <% end %>
     <% if params[:effort] %>
-        <%= link_to 'Usuń filtr', events_path(
+        <%= link_to 'Wyczyść filtr', events_path(
                                         :search => params[:search],
                                         :start_date => params[:start_date],
                                         :category_id => params[:category_id],

@@ -25,7 +25,15 @@
     </div>
 <% else %>
     <p>W dniu <%= params[:start_date] %> nie ma żadnych wydarzeń w mieście <%= params[:search] %>.</p>
-<% end %>
+    <%= link_to 'Wróć do wszystkich wydarzeń ', events_path(
+                                    :search => params[:search],
+                                    :start_date => params[:start_date],
+                                    :category_id => nil,
+                                    :effort => nil,
+                                    :cost => nil
+                            ),
+                class: 'btn btn-primary'
+    %><% end %>
 
 <script>
     if ($('body.events').length) {
