@@ -25,3 +25,7 @@ pl:
     sessions:
       signed_out: "Wylogowano z aplikacji."
       signed_in: "Zalogowano poprawnie."
+    failure:
+      user:
+        not_found_in_database: "Użytkownik o takim emailu nie istnieje."
+        invalid: "Hasło jest niepoprawne"

@@ -6,9 +6,19 @@
       </div>
       <div class="col-xs-8 col-sm-9">
         <%= link_to '<i class="fa fa-eye"></i> Szczegóły'.html_safe, [event.city, event], class: 'btn btn-primary btn-lg pull-right' %>
-        <% if user_signed_in?  %>
-            <% unless current_user == event.user %>
-                <div id="follow_form">
+        <h3><%= event.name %></h3>
+        <p><%= event.category.name %></p>
+        <p><%= fa_icon 'map-marker lg' %> <%= event.location if event.location.present?%></p>
+        <p><%= fa_icon 'calendar lg' %> <%= I18n.localize(event.start_date, :format => ("%d %B %Y")) %> -
+          <%= I18n.localize(event.end_date, :format => ("%d %B %Y")) %></p>
+        <p><%= fa_icon 'clock-o lg' %> <%= event.starts_at.strftime("%H:%M") if event.starts_at.present?%> - <%= event.ends_at.strftime("%H:%M") if event.ends_at.present?%></p>
+        <p>
+          Wysiłek: <%= render 'events/partials/effort_view', effort: event.effort if event.effort.present? %>
+        </p>
+        <p>
+          <% if user_signed_in?  %>
+              <% unless current_user == event.user %>
+                <div id="follow_form" class="pull-right">
                   <% if current_user.attendances?(event) %>
                       <%= render 'unfollow', event: event %>
                   <% else %>
@@ -17,17 +27,7 @@
                 </div>
             <% end %>
         <% end %>
-        <h3><%= event.name %></h3>
-        <p><%= event.category.name %></p>
-        <p><%= fa_icon 'map-marker lg' %> <%= event.location %></p>
-        <p><%= fa_icon 'calendar lg' %> <%= I18n.localize(event.start_date, :format => ("%d %B %Y")) %> -
-          <%= I18n.localize(event.end_date, :format => ("%d %B %Y")) %></p>
-        <p><%= fa_icon 'clock-o lg' %> <%= event.starts_at.strftime("%H:%M") %> - <%= event.ends_at.strftime("%H:%M") %></p>
-        <p>
-          Wysiłek: <%= render 'events/partials/effort_view', effort: event.effort %>
-        </p>
-        <p>
-          Koszt:<%= render 'events/partials/cost_view', cost: event.cost %>
+        Koszt:<%= render 'events/partials/cost_view', cost: event.cost if event.cost.present? %>
         </p>
       </div>
     </div>
