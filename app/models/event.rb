@@ -29,10 +29,22 @@ class Event < ActiveRecord::Base
                         :retina   => '-set colorspace sRGB -strip -sharpen 0x0.5'
                     }
   validates_attachment :image,
-                       :presence => true,
                        :size => { :in => 0..4.megabytes },
                        :content_type => { :content_type => /^image\/(jpeg|png|gif|tiff)$/
                        }
-  # validates :name:length => {max: 45}
+  validates :name,
+            :description,
+            :start_date,
+            :end_date,
+            :location,
+            :starts_at,
+            :ends_at,
+            :city_id,
+            :contact,
+            :website,
+            :cost,
+            :category_id,
+            :effort,
+            :user_id, presence: true
 
 end

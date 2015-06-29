@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 <div class="row">
-	<div id="events-top-belt" class="col-md-12">
-	  <% if @city.present? %>
-	      <h1>Wydarzenia w dniu <%= params[:start_date] %> w mieście <%= @city.name %></h1>
-          <hr class="hr-line"/>
+  <div id="events-top-belt" class="col-md-12">
+    <% if @city.present? %>
+        <h1>Wydarzenia w dniu <%= params[:start_date] %> w mieście <%= @city.name %></h1>
+        <hr class="hr-line"/>
     <% else %>
-	      <p>To miasto nie istnieje w bazie.</p>
-	  <% end %>
-	</div>
+        <p>To miasto nie istnieje w bazie.</p>
+    <% end %>
+  </div>
 </div>
 
 
@@ -25,16 +25,8 @@
     </div>
 <% else %>
     <p>W dniu <%= params[:start_date] %> nie ma żadnych wydarzeń w mieście <%= params[:search] %>.</p>
-    <%= link_to 'Wróć do wszystkich wydarzeń ', events_path(
-                                    :search => params[:search],
-                                    :start_date => params[:start_date],
-                                    :category_id => nil,
-                                    :effort => nil,
-                                    :cost => nil
-                            ),
-                class: 'btn btn-primary'
-    %><% end %>
-
+    <p class="lead">Zmień datę lub miasto w wyszukiwarce u góry strony</p>
+<% end %>
 <script>
     if ($('body.events').length) {
         $('.date').datepicker({

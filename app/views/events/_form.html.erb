@@ -11,95 +11,110 @@
         </div>
     <% end %>
     <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.label :name, 'Nazwa wydarzenia' %>
+      <%= f.text_field :name, class: 'form-control input-lg' %>
     </div>
     <div class="form-group">
-      <%= f.label :description %>
-      <%= f.text_area :description, class: 'form-control' %>
+      <%= f.label :description, 'Opis' %>
+      <%= f.text_area :description, class: 'form-control input-lg' %>
     </div>
-    <div id="datepair" class="form-group form-inline input-daterange">
-      <%= f.label :start_date, class: 'sr-only' %>
+      <div class="form-group col-sm-6">
+      <%= f.label :start_date, 'Kiedy zaczyna się wydarzenie?' %>
       <%= f.text_field :start_date,
-                       class: 'form-control date',
-                       placeholder: 'Data rozpoczęcia, kliknij'
-                       #:data => {provide: 'datepicker'}
+                       class: 'form-control date input-lg',
+                       placeholder: 'Kiedy zaczyna się wydarzenie?'
+          #:data => {provide: 'datepicker'}
       %>
-        <span class="add-on">to</span>
-      <%= f.label :end_date, class: 'sr-only' %>
-      <%= f.text_field :end_date,
-                       class: 'form-control date',
-                       placeholder: 'Data zakończenia, kliknij'
-                       #:data => {provide: 'datepicker'}
-      %>
-    </div>
+      </div>
+      <div class="form-group col-sm-6">
 
-    <div id="timepair" class="form-group form-inline">
-      <%= f.label :starts_at %>
+        <%= f.label :end_date, 'Kiedy kończy się wydarzenie?' %>
+        <%= f.text_field :end_date,
+                         class: 'form-control date input-lg',
+                         placeholder: 'Kiedy kończy się wydarzenie'
+            #:data => {provide: 'datepicker'}
+        %>
+      </div>
+
+    <div class="form-group col-sm-6">
+      <%= f.label :starts_at, 'O której godzinie zaczyna się wydarzenie?' %>
       <%= f.text_field :starts_at,
-                       class: 'time form-control'
+                       class: 'time form-control input-lg',
+                       placeholder: 'O której godzinie zaczyna się wydarzenie?'
       %>
+    </div>
+    <div class="form-group col-sm-6">
 
-      <%= f.label :ends_at %>
+      <%= f.label :ends_at, 'O której godzinie kończy się wydarzenie?' %>
       <%= f.text_field :ends_at,
-                       class: 'time form-control'
+                       class: 'time form-control col-sm-6 input-lg',
+                       placeholder: 'O której godzinie zaczyna się wydarzenie?'
       %>
     </div>
     <div class="form-group">
-      <%= f.label :location %>
-      <%= f.text_area :location, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :city %>
+      <%= f.label :city, 'Wybierz miasto' %>
       <%= collection_select(:event,
                             :city_id,
                             City.all,
                             :id,
                             :name,
-                            {prompt: 'Wybierz miasto'},
-                            {class: 'form-control'}) %>
+                            {prompt: 'Kliknij, aby wybrać miasto'},
+                            {class: 'form-control input-lg'}) %>
     </div>
     <div class="form-group">
-      <%= f.label :category %>
+      <%= f.label :location, 'Jaki jest dokładny adres wydarzenia?' %>
+      <%= f.text_field :location, class: 'form-control input-lg' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :category, 'Wybierz kategorię' %>
       <%= collection_select(:event,
                             :category_id,
                             Category.all,
                             :id,
                             :name,
-                            {prompt: 'Wybierz kategorię'},
-                            {class: 'form-control'}) %>
+                            {prompt: 'Kliknij, aby wybrać kategorię'},
+                            {class: 'form-control input-lg'}) %>
     </div>
     <div class="form-group">
-      <%= f.label :phone_number %>
-      <%= f.text_field :contact, class: 'form-control' %>
+      <%= f.label :phone_number, 'Kontakt do organizatora' %>
+      <%= f.text_field :contact, class: 'form-control input-lg' %>
     </div>
     <div class="form-group">
-      <%= f.label :cost %><br />
+      <%= f.label :cost, 'Koszt' %><br />
       <%= f.label :cost, 'Darmowe', :value => '1' %>
-      <%= f.radio_button :cost, '1' %>
+      <%= f.radio_button :cost, '1', class: 'input-lg' %>
       <%= f.label :cost, 'Płatne', value: '2' %>
-      <%= f.radio_button :cost, '2' %>
+      <%= f.radio_button :cost, '2', class: 'input-lg' %>
     </div>
     <div class="form-group">
-      <%= f.label :effort %>
+      <%= f.label :effort, 'Wysiłek' %>
       <br />
-      <%= f.label :effort, 'Łatwe', :value => '1', class: "effort_label" %>
-      <%= f.radio_button :effort, '1' %>
-      <%= f.label :effort, 'Średnie', :value => '2', class: "effort_label" %>
-      <%= f.radio_button :effort, 'Medium' %>
-      <%= f.label :effort, 'Wymagające', :value => '3', class: "effort_label" %>
-      <%= f.radio_button :effort, 'Hard' %>
+      <%= f.label :effort, 'Łatwe', :value => '1' %>
+      <%= f.radio_button :effort, '1', class: 'input-lg' %>
+      <%= f.label :effort, 'Średnie', :value => '2' %>
+      <%= f.radio_button :effort, '2', class: 'input-lg' %>
+      <%= f.label :effort, 'Wymagające', :value => '3' %>
+      <%= f.radio_button :effort, '3', class: 'input-lg' %>
     </div>
     <div class="form-group">
-      <%= f.label :website %>
-      <%= f.text_field :website, class: 'form-control' %>
+      <%= f.label :website, 'Adres strony internetowej' %>
+      <%= f.text_field :website, class: 'form-control input-lg' %>
     </div>
     <div class="form-group">
-      <%= f.label :image %><br>
+      <%= f.label :image, 'Dołącz zdjęcie' %><br>
       <%= f.file_field :image %>
     </div>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit 'Zapisz wydarzenie', class: 'btn btn-success btn-lg' %>
     </div>
 <% end %>
+
+<script>
+    $('.date').datepicker({
+        'language': "pl",
+        'todayHighlight': true,
+        'format': 'dd-mm-yyyy',
+        'autoclose': true
+    });
+</script>
