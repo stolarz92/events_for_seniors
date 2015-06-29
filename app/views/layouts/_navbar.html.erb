@@ -12,7 +12,7 @@
     <%= link_to t('.app_name'), root_path, class: 'navbar-brand' %>
   </div>
   <div class="collapse navbar-collapse" id="collapsibleMenu">
-    <% unless params[:controller] = 'homepage' %>
+    <% if params[:controller] != 'homepage' %>
         <ul class="nav navbar-nav navbar-left">
           <%= render 'layouts/partials/search_panel' %>
         </ul>
