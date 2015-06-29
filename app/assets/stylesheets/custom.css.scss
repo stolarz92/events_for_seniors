@@ -164,7 +164,7 @@ html, body {
 .ui-autocomplete{
 	> li{
 		padding:5px;
-		&:hover{
+		&:hover, &.ui-state-focus{
 			background:#008080;
 			color:white;
 		}
