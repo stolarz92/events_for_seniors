@@ -7,6 +7,9 @@
 
   <hr class="hr-line"/>
 
+  <div class="col-sm-12"><%= @city.description.html_safe %></div>
+  <hr class="hr-line"/>
+
   <div class="col-xs-12 col-sm-12 col-md-7 centered">
     <%= image_tag @city.image(:large), class: "img-responsive" %>
   </div>
