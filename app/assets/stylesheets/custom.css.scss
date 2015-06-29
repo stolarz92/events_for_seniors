@@ -160,3 +160,13 @@ html, body {
 .add-event {
   margin-top: 20px
 }
+
+.ui-autocomplete{
+	> li{
+		padding:5px;
+		&:hover{
+			background:#008080;
+			color:white;
+		}
+	}
+}
