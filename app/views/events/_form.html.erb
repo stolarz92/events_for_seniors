@@ -16,8 +16,9 @@
     </div>
     <div class="form-group">
       <%= f.label :description, 'Opis' %>
-      <%= f.text_area :description, class: 'form-control input-lg' %>
+      <%= f.cktext_area :description, class: 'form-control input-lg' %>
     </div>
+    <!--cktext_area :page, :info, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}-->
       <div class="form-group col-sm-6">
       <%= f.label :start_date, 'Kiedy zaczyna się wydarzenie?' %>
       <%= f.text_field :start_date,
@@ -111,10 +112,13 @@
 <% end %>
 
 <script>
-    $('.date').datepicker({
-        'language': "pl",
-        'todayHighlight': true,
-        'format': 'dd-mm-yyyy',
-        'autoclose': true
+    $(document).on("page:load ready", function(){
+        $('.date').datepicker({
+            'language': "pl",
+            'todayHighlight': true,
+            'format': 'dd-mm-yyyy',
+            'autoclose': true
+        });
     });
+
 </script>

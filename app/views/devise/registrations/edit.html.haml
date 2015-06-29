@@ -1,8 +1,8 @@
-%h2 Edit #{resource_name.to_s.humanize}
+%h2 Edytuj #{resource_name.to_s.humanize}
 .mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
   .panel.panel-info
     .panel-heading
-      .panel-title Sign up form
+      .panel-title Formularz rejestracji
     .panel-body
       .row
         .col-xs-10.col-xs-offset-1
@@ -13,11 +13,11 @@
               - if devise_mapping.confirmable? && resource.pending_reconfirmation?
                 %p
                   Currently waiting confirmation for: #{resource.unconfirmed_email}
-              = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
-              = f.input :password_confirmation, required: false
-              = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
+              = f.input :password, label: 'Hasło', autocomplete: "off", hint: "Zostaw puste, jeśli nie chcesz zmieniać hasła", required: false
+              = f.input :password_confirmation, label: 'Potwierdź hasło', required: false
+              = f.input :current_password, label: 'Obecne hasło', hint: "Potrzebujemy twojego obecnego hasła do zmiany", required: true
             .form-actions
-              = f.button :submit, "Update"
-      %h3 Cancel my account
-      %p Unhappy? #{link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete}
-      = link_to "Back", :back
+              = f.button :submit, "Uaktualnij dane"
+      %h3 Usuwanie konta
+      %p #{link_to "Usuń moje konto", registration_path(resource_name), data: { confirm: "Jesteś pewien?" }, method: :delete}
+      = link_to "Powrót", :back

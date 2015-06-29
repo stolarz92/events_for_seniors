@@ -39,25 +39,22 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'faker', '~> 1.4.3'
 # Paperclip
 gem 'paperclip', '~> 4.2'
-
 # Will paginate
 gem 'will_paginate', '~> 3.0.6'
 gem 'will_paginate-bootstrap'
-
 # Jquery turbolinks
 gem 'jquery-turbolinks'
-
 # Font awesome
 gem 'font-awesome-rails'
-
 # Devise
 gem 'devise'
-
 # Simple form
 gem 'simple_form'
-
 # Haml
 gem 'haml-rails'
+# Tiny_mce
+gem 'ckeditor'
+
 
 
 # Use ActiveModel has_secure_password

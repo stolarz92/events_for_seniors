@@ -17,3 +17,11 @@ pl:
         paid: Płatne
 
 
+  devise:
+    registrations:
+      user:
+        signed_up: "Rejestracja udała się."
+        updated: "Twoje dane zostały zaktualizowane."
+    sessions:
+      signed_out: "Wylogowano z aplikacji."
+      signed_in: "Zalogowano poprawnie."

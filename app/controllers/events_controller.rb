@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   include EventsHelper
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :set_city, only: [:index, :show, :update, :destroy]
+  before_action :set_city, only: [:index, :show]
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   # GET /events
@@ -35,11 +35,12 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = Event.new(event_params)
+    @event.user = current_user
 
     respond_to do |format|
       if @event.save
         city = @event.city
-        format.html { redirect_to city_event_path(city, @event), notice: 'Event was successfully created.' }
+        format.html { redirect_to city_event_path(city, @event), notice: 'Wydarzenie zostało utworzone.' }
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
@@ -51,9 +52,11 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    @event = Event.find(params[:id])
+    city = @event.city
     respond_to do |format|
       if @event.update(event_params)
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to city_event_path(city, @event), notice: 'Wydarzenie zostało zmienione.' }
         format.json { render :show, status: :ok, location: @event }
       else
         format.html { render :edit }
@@ -67,7 +70,7 @@ class EventsController < ApplicationController
   def destroy
     @event.destroy
     respond_to do |format|
-      format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'Event was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
