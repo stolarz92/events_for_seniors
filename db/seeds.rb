@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 def create_admin
   User.create!(
-      email: 'admin@example.com',
+      email: 'admin@admin.com',
       password: 'password',
       password_confirmation: 'password',
       admin: true
@@ -24,7 +24,7 @@ def create_user
     )
   end
   User.create!(
-      email: 'test@test.pl',
+      email: 'user@user.pl',
       password: 'password',
       password_confirmation: 'password',
       admin: false
