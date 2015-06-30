@@ -198,7 +198,7 @@ Do najważniejszych zabytków Gdańska można zaliczyć:
 <li>Złota Kamienica,</li>
 <li>27–metrowa Latarnia Morska</li>
 <li>oraz Żuraw – najstarszy zachowany dźwig w Europie.</li>
-
+</ul>
 <p> Gdańsk jest jednym z miast leżących na Europejskim Szlaku Gotyku Ceglanego.</p>
 <p>
 Gdańsk nazywa się Światową Stolicą Bursztynu.
@@ -225,7 +225,7 @@ end
 
 def create_events
   300.times do |n|
-    name = Faker::Lorem.sentence
+    name = Faker::Lorem.sentence(5)
     description = Faker::Lorem.paragraph(10)
     start_date = Faker::Date.between(Date.today, Date.today + 7.days).strftime("%d-%m-%Y")
     end_date = Faker::Date.between(Date.today + 7.days, Date.today + 10.days).strftime("%d-%m-%Y")

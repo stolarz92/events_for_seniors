@@ -12,7 +12,7 @@ class EventsController < ApplicationController
       @events = @city.filtered_events(params).paginate(:page => params[:page], :per_page => 10)
       @categories = Category.all
     else
-      redirect_to root_path, alert: 'Złe miasto lub niepoprawna data. Zmień parametry wyszukiwania.'
+      redirect_to root_path, alert: 'Złe miasto lub niepoprawna data. Wprowadź poprawne miasto lub datę w wyszukiwarce.'
     end
   end
 

@@ -7,16 +7,27 @@
       <div class="col-xs-8 col-sm-9">
         <%= link_to '<i class="fa fa-eye"></i> Szczegóły'.html_safe, [event.city, event], class: 'btn btn-primary btn-lg pull-right' %>
         <h3><%= event.name %></h3>
-        <p><%= event.category.name %></p>
+        <p>
+          <%= event.category.name %>
+        </p>
         <p><%= fa_icon 'map-marker lg' %> <%= event.location if event.location.present?%></p>
         <p><%= fa_icon 'calendar lg' %> <%= I18n.localize(event.start_date, :format => ("%d %B %Y")) %> -
-          <%= I18n.localize(event.end_date, :format => ("%d %B %Y")) %></p>
+          <%= I18n.localize(event.end_date, :format => ("%d %B %Y")) %>
+        </p>
         <p><%= fa_icon 'clock-o lg' %> <%= event.starts_at.strftime("%H:%M") if event.starts_at.present?%> - <%= event.ends_at.strftime("%H:%M") if event.ends_at.present?%></p>
         <p>
           Wysiłek: <%= render 'events/partials/effort_view', effort: event.effort if event.effort.present? %>
+          <% if current_user.admin? %>
+              <div class="pull-right">
+              <%= link_to 'Edytuj', edit_event_path(event), class: 'btn btn-warning btn-sm' %>
+              <%= link_to 'Usuń', event_path(event), method: :delete,
+                          data: { confirm: 'Are you sure?' },
+                          class: 'btn btn-danger btn-xs'%>
+          <% end %>
+        </div>
         </p>
         <p>
-        Koszt:<%= render 'events/partials/cost_view', cost: event.cost if event.cost.present? %>
+          Koszt:<%= render 'events/partials/cost_view', cost: event.cost if event.cost.present? %>
         </p>
       </div>
     </div>
