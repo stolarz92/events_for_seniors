@@ -1,5 +1,6 @@
-<%= form_for(current_user.event_relationships.find_by(event_id: event.id),
+<%= form_for(current_user.event_relationships.find_by(event_id: @event.id),
              html: { method: :delete },
-             remote: true) do |f| %>
+             remote: true
+    ) do |f| %>
     <%= f.submit "Usuń z zapisanych", class: "btn" %>
 <% end %>

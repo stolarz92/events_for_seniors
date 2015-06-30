@@ -16,17 +16,6 @@
           Wysiłek: <%= render 'events/partials/effort_view', effort: event.effort if event.effort.present? %>
         </p>
         <p>
-          <% if user_signed_in?  %>
-              <% unless current_user == event.user %>
-                <div id="follow_form" class="pull-right">
-                  <% if current_user.attendances?(event) %>
-                      <%= render 'unfollow', event: event %>
-                  <% else %>
-                      <%= render 'follow', event: event %>
-                  <% end %>
-                </div>
-            <% end %>
-        <% end %>
         Koszt:<%= render 'events/partials/cost_view', cost: event.cost if event.cost.present? %>
         </p>
       </div>

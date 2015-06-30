@@ -1,4 +1,3 @@
-<p id="notice"><%= notice %></p>
 <% if @event.present? %>
     <div class="row">
       <%= link_to 'Powrót', :back, class: 'btn btn-info' %>
@@ -68,7 +67,7 @@
           </tr>
           <tr>
             <th>Strona internetowa</th>
-            <td><%= @event.website %></td>
+            <td><a href = <%= @event.website %>><%= @event.website %></a></td>
           </tr>
           </tbody>
           <tfoot></tfoot>
