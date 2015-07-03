@@ -1,9 +1,0 @@
-<%
-  base_path = ''
-  base_path << 'http://leszczyna.wzks.uj.edu.pl/12_stolarski'
-    base_path << "/#{Rails.root.basename.to_s}"
-  base_path << Rails.application.config.assets.prefix
-  base_path << '/javascripts/ckeditor/'
-%>
-var CKEDITOR_BASEPATH = '<%= base_path %>';
-alert(CKEDITOR_BASEPATH);

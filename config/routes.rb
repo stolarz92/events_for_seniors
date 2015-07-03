@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 
   resources :events
   resources :relationships,       only: [:create, :destroy]
+  mount Ckeditor::Engine => '/ckeditor'
 
 
   # The priority is based upon order of creation: first created -> highest priority.
