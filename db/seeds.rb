@@ -56,7 +56,7 @@ której dzieje opowiedział w 1993 r. Steven Spielberg w filmie „Lista Schindl
 <p> W ostatnich latach Kraków stał się miejscem licznych pielgrzymek.
 Katolicy odwiedzają przede wszystkim Sanktuarium Bożego Miłosierdzia w Łagiewnikach i podchodzą pod „okno papieskie” Pałacu Biskupiego – miejsce, w którym mieszkał
 niegdyś Karol Wojtyła i skąd, już jako papież, prowadził on wielogodzinne rozmowy z wiernymi.</p>",
-                   image: File.new("/home/stolarz/licencjat/zdjecia//miasta/krakow.jpg")
+                   image: File.new("/home/epi/12_stolarski/obrazy/miasta/krakow.jpg")
                },
                {
                    name: "Warszawa",
@@ -84,7 +84,7 @@ Tak, więc obok hoteli o zróżnicowanym standardzie na turystów czekają takż
 <p>Zabudowa wielkomiejska współistnieje z otwartą przestrzenią skwerów, parków i ogrodów.
 Tętniąca życiem metropolia bez trudu odnajduje się w Europie. Pozostawia niezapomniane wrażenia gościom i
 oferuje szanse tym, którzy zdecydują się zostać tu na dłużej.</p>",
-                   image: File.new("/home/stolarz/licencjat/zdjecia//miasta/warszawa.jpg")
+                   image: File.new("/home/epi/12_stolarski/obrazy/miasta/warszawa.jpg")
                },
                {
                    name: "Wrocław",
@@ -121,7 +121,7 @@ szczycący się tradycjami w koszykówce, zawodach żużlowych, piłce nożnej, 
 brębie Kotliny Kłodzkiej oraz Sudetów i Karkonoszy. Zwiększa to i tak już bogatą ofertę aktywnego wypoczynku
  we Wrocławiu i zaspokoi wymagania nawet najbardziej wybrednych turystów.</p>
 ",
-                   image: File.new("/home/stolarz/licencjat/zdjecia//miasta/wroclaw.jpg")
+                   image: File.new("/home/epi/12_stolarski/obrazy/miasta/wroclaw.jpg")
                },
                {
                    name: "Poznań",
@@ -156,7 +156,7 @@ lub na mecz koszykówki, siatkówki, hokeja na trawie albo piłki ręcznej.
 Szlak Piastowski oraz Trasa Kórnicka. Wokół miasta wytyczony jest rowerowy \"Pierścień Poznański\"
 połączony z centrum siedmioma szlakami dojazdowymi. Dla osób spragnionych obcowania z przyrodą swoje
 podwoje otwierają dwa ogrody zoologiczne, ogród botaniczny, palmiarnia oraz zabytkowe parki.</p>",
-                   image: File.new("/home/stolarz/licencjat/zdjecia//miasta/poznan.jpg")
+                   image: File.new("/home/epi/12_stolarski/obrazy/miasta/poznan.jpg")
                },
                {
                    name: "Gdańsk",
@@ -207,20 +207,8 @@ Po zniszczeniach spowodowanych wojnami, miastu udało się powrócić do tradycj
  i na powrót otworzyć warsztaty obróbki bursztynu. Dziś Gdańsk jest siedzibą Krajowej
 Izby Gospodarczej Bursztynu i Międzynarodowego Stowarzyszenia Bursztynników,
 a także gospodarzem największych na świecie targów bursztynu („AMBERIF” i „AMBERMART”).</p>",
-                   image: File.new("/home/stolarz/licencjat/zdjecia//miasta/gdansk.jpg")
+                   image: File.new("/home/epi/12_stolarski/obrazy/miasta/gdansk.jpg")
                }])
-end
-
-def create_categories
-  Category.create([{name: "Teatr"},
-                   {name: "Wystawa"},
-                   {name: "Jedzenie"},
-                   {name: "Koncert"},
-                   {name: "Wydarzenie uliczne"},
-                   {name: "Sport"}
-                  ])
-
-  Faker::Config.locale = :pl
 end
 
 def create_cost
@@ -245,6 +233,18 @@ def create_effort
   )
 end
 
+def create_categories
+  Category.create([{name: "Teatr"},
+                   {name: "Wystawa"},
+                   {name: "Jedzenie"},
+                   {name: "Koncert"},
+                   {name: "Wydarzenie uliczne"},
+                   {name: "Sport"}
+                  ])
+
+  Faker::Config.locale = :pl
+end
+
 def create_events
   300.times do |n|
     name = Faker::Lorem.sentence(4)
@@ -261,19 +261,19 @@ def create_events
     city_id = [1,2,3,4,5].sample
     effort_id = [1,2,3].sample
     image =
-        ["/home/stolarz/licencjat/Money/DP-500S-01.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-02.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-03.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-04.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-05.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-06.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-07.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-08.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-09.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-10.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-11.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-12.jpg",
-         "/home/stolarz/licencjat/Money/DP-500S-13.jpg"].sample
+        ["/home/epi/12_stolarski/obrazy/DP-500S-01.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-02.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-03.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-04.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-05.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-06.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-07.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-08.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-09.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-10.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-11.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-12.jpg",
+         "/home/epi/12_stolarski/obrazy/DP-500S-13.jpg"].sample
     user_id = [1,2,3,4,5].sample
     Event.create!(name: name,
                   description: description,
