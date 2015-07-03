@@ -247,7 +247,7 @@ end
 
 def create_events
   300.times do |n|
-    name = Faker::Lorem.sentence(3)
+    name = Faker::Lorem.sentence
     description = Faker::Lorem.paragraph(10)
     start_date = Faker::Date.between(Date.today, Date.today + 7.days).strftime("%d-%m-%Y")
     end_date = Faker::Date.between(Date.today + 7.days, Date.today + 10.days).strftime("%d-%m-%Y")
