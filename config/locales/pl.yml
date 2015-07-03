@@ -29,3 +29,4 @@ pl:
       user:
         not_found_in_database: "Użytkownik o takim emailu nie istnieje."
         invalid: "Hasło jest niepoprawne"
+        unauthenticated: "Musisz być zalogowany"

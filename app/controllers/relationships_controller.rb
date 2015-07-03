@@ -1,5 +1,5 @@
 class RelationshipsController < ApplicationController
-  before_action :user_logged_in?
+  before_action :authenticate_user!
   def create
     @user = current_user
     @event = Event.find(params[:event_id])

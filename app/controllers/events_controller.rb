@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   include EventsHelper
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_action :set_city, only: [:index, :show]
+  before_action :set_city, only: [:index]
   before_action :authenticate_user!, only: [:new, :create, :update, :edit, :destroy]
 
   # GET /events
@@ -18,6 +18,7 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    @city = City.find(params[:city_id])
     @category = @event.category
     similar_events
   end
