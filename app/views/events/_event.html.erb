@@ -17,7 +17,7 @@
         <p><%= fa_icon 'clock-o lg' %> <%= event.starts_at.strftime("%H:%M") if event.starts_at.present?%> - <%= event.ends_at.strftime("%H:%M") if event.ends_at.present?%></p>
         <p>
           Wysiłek: <%= render 'events/partials/effort_view', effort: event.effort if event.effort.present? %>
-          <% if curent_user && current_user.admin? %>
+          <% if current_user && current_user.admin? %>
               <div class="pull-right">
               <%= link_to 'Edytuj', edit_event_path(event), class: 'btn btn-warning btn-sm' %>
               <%= link_to 'Usuń', event_path(event), method: :delete,
