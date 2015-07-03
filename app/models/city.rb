@@ -35,7 +35,6 @@ class City < ActiveRecord::Base
     result
   end
 
-  #do zrobienia!!!!!!!!!!!!!!!!!!!
   def get_popular_cities
     city_ids = Event.group(:city_id).count.sort_by { |k, v| v}.to_h.keys
     city = City.find(city_ids).order(city_ids)
