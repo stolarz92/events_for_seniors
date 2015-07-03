@@ -81,21 +81,24 @@
       <%= f.text_field :contact, class: 'form-control input-lg' %>
     </div>
     <div class="form-group">
-      <%= f.label :cost, 'Koszt' %><br />
-      <%= f.label :cost, 'Darmowe', :value => '1' %>
-      <%= f.radio_button :cost, '1', class: 'input-lg' %>
-      <%= f.label :cost, 'Płatne', value: '2' %>
-      <%= f.radio_button :cost, '2', class: 'input-lg' %>
+      <%= f.label :cost, 'Koszt' %>
+      <%= collection_select(:event,
+                            :category_id,
+                            Cost.all,
+                            :id,
+                            :name,
+                            {prompt: 'Kliknij, aby wybrać cenę'},
+                            {class: 'form-control input-lg'}) %>
     </div>
     <div class="form-group">
       <%= f.label :effort, 'Wysiłek' %>
-      <br />
-      <%= f.label :effort, 'Łatwe', :value => '1' %>
-      <%= f.radio_button :effort, '1', class: 'input-lg' %>
-      <%= f.label :effort, 'Średnie', :value => '2' %>
-      <%= f.radio_button :effort, '2', class: 'input-lg' %>
-      <%= f.label :effort, 'Wymagające', :value => '3' %>
-      <%= f.radio_button :effort, '3', class: 'input-lg' %>
+      <%= collection_select(:event,
+                            :category_id,
+                            Effort.all,
+                            :id,
+                            :name,
+                            {prompt: 'Kliknij, aby wybrać poziom wysiłku'},
+                            {class: 'form-control input-lg'}) %>
     </div>
     <div class="form-group">
       <%= f.label :website, 'Adres strony internetowej' %>
