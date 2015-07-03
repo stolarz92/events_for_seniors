@@ -50,7 +50,7 @@ class Event < ActiveRecord::Base
             :effort,
             :user_id, presence: true
 
-  validates :name, length: { in: 3..50 }
+  validates :name, length: { in: 3..100 }
   validates :description, length: { in: 3..1000 }
   validates :location, length: { in: 3..100 }
   validates :contact, length: { in: 3..50 }
