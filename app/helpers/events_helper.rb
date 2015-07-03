@@ -1,17 +1,36 @@
 module EventsHelper
-  def effort
-    {
-        Mały: 1,
-        Średni: 2,
-        Duży: 3
-    }
-  end
 
   def cost
-    {
-        Bezpłatne: 1,
-        Płatne: 2
-    }
+    Cost.all
+  end
+
+  def effort
+    Effort.all
+  end
+
+  def effort_icons(effort)
+    if effort == 1
+      icons = [
+          fa_icon('circle lg'),
+          fa_icon('circle-o lg'),
+          fa_icon('circle-o lg')
+      ]
+      icons.join().html_safe
+    elsif effort == 2
+      icons = [
+          fa_icon('circle lg'),
+          fa_icon('circle lg'),
+          fa_icon('circle-o lg')
+      ]
+      icons.join().html_safe
+    else
+      icons = [
+          fa_icon('circle lg'),
+          fa_icon('circle lg'),
+          fa_icon('circle lg')
+      ]
+      icons.join().html_safe
+    end
   end
 
   def similar_events

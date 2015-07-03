@@ -95,10 +95,10 @@ class EventsController < ApplicationController
         :city_id,
         :contact,
         :website,
-        :cost,
+        :cost_id,
         :image,
         :category_id,
-        :effort,
+        :effort_id,
         :user_id
     )
   end

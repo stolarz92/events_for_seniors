@@ -16,7 +16,7 @@
         </p>
         <p><%= fa_icon 'clock-o lg' %> <%= event.starts_at.strftime("%H:%M") if event.starts_at.present?%> - <%= event.ends_at.strftime("%H:%M") if event.ends_at.present?%></p>
         <p>
-          Wysiłek: <%= render 'events/partials/effort_view', effort: event.effort if event.effort.present? %>
+          Wysiłek: <%= effort_icons(event.effort.id) %>
         </p>
 
         <% if current_user && current_user.admin? %>
@@ -28,7 +28,7 @@
             </div>
         <% end %>
         <p>
-          Koszt:<%= render 'events/partials/cost_view', cost: event.cost if event.cost.present? %>
+          Koszt: <%= event.cost.name %>
         </p>
       </div>
     </div>

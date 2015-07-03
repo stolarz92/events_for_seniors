@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150629070554) do
+ActiveRecord::Schema.define(version: 20150703082902) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -30,6 +30,18 @@ ActiveRecord::Schema.define(version: 20150629070554) do
     t.text     "description",        limit: 65535
   end
 
+  create_table "costs", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "efforts", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string   "name",               limit: 255
     t.text     "description",        limit: 65535
@@ -41,7 +53,6 @@ ActiveRecord::Schema.define(version: 20150629070554) do
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
     t.integer  "city_id",            limit: 4
-    t.string   "cost",               limit: 255
     t.string   "contact",            limit: 255
     t.string   "website",            limit: 255
     t.string   "image_file_name",    limit: 255
@@ -49,9 +60,13 @@ ActiveRecord::Schema.define(version: 20150629070554) do
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
     t.integer  "category_id",        limit: 4
-    t.string   "effort",             limit: 255
     t.integer  "user_id",            limit: 4
+    t.integer  "effort_id",          limit: 4
+    t.integer  "cost_id",            limit: 4
   end
+
+  add_index "events", ["cost_id"], name: "index_events_on_cost_id", using: :btree
+  add_index "events", ["effort_id"], name: "index_events_on_effort_id", using: :btree
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "event_id",   limit: 4
@@ -83,4 +98,6 @@ ActiveRecord::Schema.define(version: 20150629070554) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "events", "costs"
+  add_foreign_key "events", "efforts"
 end

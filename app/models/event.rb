@@ -2,6 +2,9 @@ class Event < ActiveRecord::Base
   belongs_to :city
   belongs_to :category
   belongs_to :user
+  belongs_to :cost
+  belongs_to :effort
+
 
   has_many :user_relationships,
            class_name:  "Relationship",
@@ -46,5 +49,11 @@ class Event < ActiveRecord::Base
             :category_id,
             :effort,
             :user_id, presence: true
+
+  validates :name, length: { in: 3..50 }
+  validates :description, length: { in: 3..1000 }
+  validates :location, length: { in: 3..100 }
+  validates :contact, length: { in: 3..50 }
+  validates :website, length: { in: 3..70 }
 
 end

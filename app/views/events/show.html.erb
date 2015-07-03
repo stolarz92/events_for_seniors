@@ -49,12 +49,12 @@
           <tr>
             <th>Koszt</th>
             <td>
-              <%= render 'events/partials/cost_view', cost: @event.cost %>
+              <%= @event.cost.name %>
             </td>
           </tr>
           <tr>
             <th>Wysiłek</th>
-            <td><%= render 'events/partials/effort_view', effort: @event.effort %>
+            <td><%= @event.effort.name %>
             </td>
           </tr>
           <tr>
