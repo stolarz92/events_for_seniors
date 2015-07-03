@@ -211,6 +211,28 @@ a także gospodarzem największych na świecie targów bursztynu („AMBERIF” 
                }])
 end
 
+def create_cost
+  Cost.create(
+      [
+          {name: 'Płatne'},
+          {name: 'Bezpłatne'}
+      ]
+
+  )
+end
+
+def create_effort
+  Effort.create(
+      [
+          {name: 'Mały'},
+          {name: 'Średni'},
+          {name: 'Duży'}
+
+      ]
+
+  )
+end
+
 def create_categories
   Category.create([{name: "Teatr"},
                    {name: "Wystawa"},
@@ -287,6 +309,8 @@ end
 create_admin
 create_user
 create_categories
+create_cost
+create_effort
 create_cities
 create_events
 create_relationships
