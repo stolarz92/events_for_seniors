@@ -7,7 +7,7 @@
   <hr class="hr-line" />
 </div>
 <div class="col-sm-12">
-  <h2>Twoje wydarzenia</h2>
+  <h2>Twoje wydarzenia <%= link_to 'Dodaj nowe', new_event_path, class: 'btn btn-success' %></h2>
   <% if @events.any? %>
       <table class="table">
         <thead>
