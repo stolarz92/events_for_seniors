@@ -1,8 +1,15 @@
 <div class="row">
 
   <div class="col-sm-12">
-      <h1><%= @city.name %></h1>
-      <p>Odkryj najciekawsze wydarzenia dziejące się w <%= @city.name %></p>
+    <h1><%= @city.name %>
+      <% if current_user && current_user.admin? %>
+      <%= link_to 'Edytuj', edit_city_path(@city), class: 'btn btn-warning' %>
+      <%= link_to 'Usuń miasto', city_path(@city), method: :delete,
+                  data: { confirm: 'Jesteś pewien?' },
+                  class: 'btn btn-danger btn-xs'
+      %>
+      <% end %>
+    </h1>
   </div>
 
   <hr class="hr-line"/>

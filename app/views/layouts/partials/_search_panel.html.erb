@@ -4,7 +4,7 @@
       <%= text_field_tag :search,
                          params[:search],
                          class: 'form-control',
-                         placeholder: 'Kraków',
+                         placeholder: 'Miasto (np. Kraków)',
                          type: 'search',
                          data: {
                                  autocomplete: homepage_autocomplete_city_name_path
@@ -15,7 +15,7 @@
       <label class="sr-only" for="date">Date</label>
       <%= text_field_tag :start_date,
                          params[:start_date],
-                         placeholder: nil,
+                         placeholder: 'Data',
                          class: 'form-control date short',
                          :data => {
                                  provide: 'datepicker'

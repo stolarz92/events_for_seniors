@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include ApplicationHelper
   before_action :set_i18n_locale_from_params
 
   # Prevent CSRF attacks by raising an exception.
@@ -11,14 +12,7 @@ class ApplicationController < ActionController::Base
     if params[:search]
       @city = City.find_by name: params[:search]
     else
-      @city = City.find(params[:city_id])
-    end
-  end
-
-  def logged_in_user
-    unless user_signed_in?
-      flash[:danger] = "Please log in"
-      redirect_to login_url
+      @city = City.find(params[:id])
     end
   end
 
@@ -44,4 +38,10 @@ class ApplicationController < ActionController::Base
     flash[:alert] = 'Ten rekord nie istnieje'
     redirect_to action: :index
   end
+
+  # def save_previous_url
+  #   # session[:previous_url] is a Rails built-in variable to save last url.
+  #   session[:previous_url] = request.original_url
+  #   session[:previous_controller] = params[:controller]
+  # end
 end

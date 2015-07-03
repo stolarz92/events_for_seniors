@@ -2,7 +2,7 @@
   <h4>Koszt</h4>
   <ul class="filter">
     <% cost.each do |cost| %>
-        <% if cost.name == params[:cost] %>
+        <% if cost.id.to_s == params[:cost] %>
             <li class="category-active">
         <% else %>
             <li>

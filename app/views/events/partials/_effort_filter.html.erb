@@ -2,7 +2,7 @@
   <h4>Wysiłek</h4>
   <ul class="filter">
     <% effort.each do |effort| %>
-        <% if effort.name == params[:effort] %>
+        <% if effort.id.to_s == params[:effort] %>
             <li class="category-active">
         <% else %>
             <li>

@@ -1,5 +1,7 @@
 class CitiesController < ApplicationController
   include CitiesHelper
+  before_action :check_permissions, only: [:new, :create, :edit, :destroy]
+  before_action :set_city, only: [:edit, :update, :destroy]
 
   def index
     @cities = City.all
@@ -17,13 +19,12 @@ class CitiesController < ApplicationController
     @city = City.new
   end
 
-
   def create
     @city = City.new(city_params)
 
     respond_to do |format|
       if @city.save
-        format.html { redirect_to @city, notice: 'Event was successfully created.' }
+        format.html { redirect_to @city, notice: 'Miasto zostało stworzone.' }
         format.json { render :show, status: :created, location: @city }
       else
         format.html { render :new }
@@ -36,12 +37,27 @@ class CitiesController < ApplicationController
   end
 
   def update
+      respond_to do |format|
+        if @city.update(city_params)
+          format.html { redirect_to city_path(@city), notice: 'Miasto zostało zmienione.' }
+        format.json { render :show, status: :ok, location: @event }
+        else
+        format.html { render :edit }
+        format.json { render json: @city.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def destroy
+    @city.destroy
+    respond_to do |format|
+      format.html { redirect_to cities_path, notice: 'Miasto zostało usunięte.' }
+      format.json { head :no_content }
+    end
   end
 
   private
+
   def get_date
     Time.now.strftime("%Y-%m-%d")
   end
@@ -51,5 +67,11 @@ class CitiesController < ApplicationController
         :name,
         :image,
     )
+  end
+
+  def check_permissions
+    unless current_user && current_user.admin?
+      redirect_to root_path
+    end
   end
 end

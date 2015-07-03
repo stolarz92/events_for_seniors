@@ -5,7 +5,14 @@
         <%= image_tag event.image.url(:thumb), :class => "img-responsive" %>
       </div>
       <div class="col-xs-8 col-sm-9">
-        <%= link_to '<i class="fa fa-eye"></i> Szczegóły'.html_safe, [event.city, event], class: 'btn btn-primary btn-lg pull-right' %>
+        <%= link_to '<i class="fa fa-eye"></i> Szczegóły'.html_safe,
+                    [
+                            event.city,
+                            event,
+                            search: params[:search],
+                            start_date: params[:start_date]
+                    ],
+                    class: 'btn btn-primary btn-lg pull-right' %>
         <h3><%= event.name %></h3>
         <p>
           <%= event.category.name %>

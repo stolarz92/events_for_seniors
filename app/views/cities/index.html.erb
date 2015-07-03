@@ -2,6 +2,9 @@
   <div id="events-top-belt" class="col-md-12">
     <h1>Odkryj wspaniałe miejsca pełne interesujących wydarzeń!</h1>
     <hr class="hr-line"/>
+    <% if current_user && current_user.admin? %>
+    <%= link_to 'Dodaj nowe miasto', new_city_path, class: 'btn btn-success' %>
+    <% end %>
   </div>
   <% @cities.each do |city| %>
       <div class="col-xs-6 col-sm-4 col-md-3">
