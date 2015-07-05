@@ -11,8 +11,8 @@
                                          :search => params[:search],
                                          :start_date => params[:start_date],
                                          :category_id => category.id,
-                                         :effort => params[:effort],
-                                         :cost => params[:cost]
+                                         :effort_id => params[:effort_id],
+                                         :cost_id => params[:cost_id]
                                  ),
                     class: 'filter-button'
 
@@ -24,8 +24,8 @@
                                       :search => params[:search],
                                       :start_date => params[:start_date],
                                       :category_id => nil,
-                                      :effort => params[:effort],
-                                      :cost => params[:cost]
+                                      :effort_id => params[:effort_id],
+                                      :cost_id => params[:cost_id]
                               )
       %>
   <% end %>

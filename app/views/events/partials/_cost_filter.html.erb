@@ -2,7 +2,7 @@
   <h4>Koszt</h4>
   <ul class="filter">
     <% cost.each do |cost| %>
-        <% if cost.id.to_s == params[:cost] %>
+        <% if cost.id.to_s == params[:cost_id] %>
             <li class="category-active">
         <% else %>
             <li>
@@ -11,19 +11,19 @@
                                :search => params[:search],
                                :start_date => params[:start_date],
                                :category_id => params[:category_id],
-                               :effort => params[:effort],
-                               :cost => cost.id
+                               :effort_id => params[:effort_id],
+                               :cost_id => cost.id
                        ),
                     class: 'filter-button'
         %></li>
     <% end %>
-    <% if params[:cost] %>
+    <% if params[:cost_id] %>
         <%= link_to 'Wyczyść filtr', events_path(
                                         :search => params[:search],
                                         :start_date => params[:start_date],
                                         :category_id => params[:category_id],
-                                        :effort => params[:effort],
-                                        :cost => nil
+                                        :effort_id => params[:effort_id],
+                                        :cost_id => nil
                                 )
         %>
     <% end %>
