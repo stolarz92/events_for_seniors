@@ -53,6 +53,9 @@ gem 'simple_form'
 # Haml
 gem 'haml-rails'
 # Tiny_mce
+gem 'tinymce-rails'
+gem 'tinymce-rails-langs'
+
 
 
 

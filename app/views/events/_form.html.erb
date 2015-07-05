@@ -16,9 +16,11 @@
     </div>
     <div class="form-group">
       <%= f.label :description, 'Opis' %>
-      <%= f.text_area :description, class: 'form-control input-lg', id: 'cke_textarea' %>
+      <%= f.text_area :description,
+                      class: 'form-control tinymce',
+                      :rows => 40,
+                      :cols => 120 %>
     </div>
-    <!--cktext_area :page, :info, :cols => 40, :ckeditor => {:uiColor => '#AADC6E', :toolbar => 'mini'}-->
     <div class="form-group col-sm-6">
       <%= f.label :start_date, 'Kiedy zaczyna się wydarzenie?' %>
       <%= f.text_field :start_date,
@@ -113,7 +115,7 @@
       <%= f.submit 'Zapisz wydarzenie', class: 'btn btn-success btn-lg' %>
     </div>
 <% end %>
-
+<%= tinymce %>
 <script>
     $(document).on("page:load ready", function(){
         $('.date').datepicker({

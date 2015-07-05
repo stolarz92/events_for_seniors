@@ -20,4 +20,5 @@
 //= require jquery.datepair.js
 //= require bootstrap-sprockets
 //= require turbolinks
+//= require tinymce
 //= require_tree .
