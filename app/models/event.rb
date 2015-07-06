@@ -45,9 +45,9 @@ class Event < ActiveRecord::Base
             :city_id,
             :contact,
             :website,
-            :cost,
+            :cost_id,
             :category_id,
-            :effort,
+            :effort_id,
             :user_id, presence: true
 
   validates :name, length: { in: 3..100 }

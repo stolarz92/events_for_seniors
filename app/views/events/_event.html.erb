@@ -30,7 +30,7 @@
             <div class="pull-right">
               <%= link_to 'Edytuj', edit_event_path(event), class: 'btn btn-warning btn-sm' %>
               <%= link_to 'Usuń', event_path(event), method: :delete,
-                          data: { confirm: 'Are you sure?' },
+                          data: { confirm: 'Na pewno chcesz usunąć wydarzenie?' },
                           class: 'btn btn-danger btn-xs'%>
             </div>
         <% end %>
