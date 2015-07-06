@@ -249,8 +249,8 @@ def create_events
   300.times do |n|
     name = Faker::Lorem.sentence(2)
     description = Faker::Lorem.paragraph(10)
-    start_date = Faker::Date.between(Date.today, Date.today + 7.days).strftime("%d-%m-%Y")
-    end_date = Faker::Date.between(Date.today + 7.days, Date.today + 10.days).strftime("%d-%m-%Y")
+    start_date = Faker::Date.between(Date.today + 7.days, Date.today + 10.days).strftime("%d-%m-%Y")
+    end_date = Faker::Date.between(Date.today + 10.days, Date.today + 13.days).strftime("%d-%m-%Y")
     starts_at = Faker::Time.forward(30, :morning).strftime("%H:%M:S")
     ends_at = Faker::Time.forward(30, :night).strftime("%H:%M:S")
     location = Faker::Address.street_name
