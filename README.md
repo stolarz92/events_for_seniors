@@ -15,11 +15,13 @@ User:
 * pass: password
 
 Logged in user can:
+
 1. Add his own events and manage them
 2. Add others events to his 'calendar' (when he is on event site)
 3. Manage his profile
 
 All users can:
+
 1. Search and view events
 2. Register and log in
 
