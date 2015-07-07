@@ -2,7 +2,7 @@
 
 Working app is available [here](http://leszczyna.wzks.uj.edu.pl/12_stolarski/events_for_seniors/)
 
-Admin:
+### Admin:
 * login: admin@admin.com
 * pass: password
 
@@ -10,7 +10,7 @@ Admin can:
 1. Add, edit, delete events and cities
 2. Add his own events
 
-User:
+### User:
 * login: user@user.pl
 * pass: password
 
@@ -31,14 +31,14 @@ Website has some features for older adults like larger font, increasing/decreasi
 simplicity, reduced whitespaces between some elements, a lot of explanation and tips
 especially in forms.
 
-# Prerequisites
+## Prerequisites
 
 * Ruby 2.2
 * Rails 4.2.0
 * MySQL
 * Git
 
-# Getting started
+## Getting started
 
   1. `git clone https://github.com/stolarz92/events_for_seniors.git`
   2. Go to app directory `cd events_for_seniors`
