@@ -7,6 +7,7 @@ Working app is available [here](http://leszczyna.wzks.uj.edu.pl/12_stolarski/eve
 * pass: password
 
 Admin can:
+
 1. Add, edit, delete events and cities
 2. Add his own events
 
