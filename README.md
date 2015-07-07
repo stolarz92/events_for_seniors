@@ -33,6 +33,7 @@ Admin can:
 1. Add, edit, delete events and cities
 2. Add his own events
 
+
 #### User:
 * login: user@user.pl
 * pass: password
