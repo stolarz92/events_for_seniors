@@ -6,9 +6,22 @@ Admin:
 * login: admin@admin.com
 * pass: password
 
+Admin can:
+1. Add, edit, delete events and cities
+2. Add his own events
+
 User:
 * login: user@user.pl
 * pass: password
+
+Logged in user can:
+1. Add his own events and manage them
+2. Add others events to his 'calendar' (when he is on event site)
+3. Manage his profile
+
+All users can:
+1. Search and view events
+2. Register and log in
 
 Events for seniors is an app made for diploma on Jagiellonian University.
 App allows users to search events and add their own after creating an account.
