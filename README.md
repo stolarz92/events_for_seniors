@@ -3,12 +3,12 @@
 Working app is available [here](http://leszczyna.wzks.uj.edu.pl/12_stolarski/events_for_seniors/)
 
 Admin:
-login: admin@admin.com
-pass: password
+* login: admin@admin.com
+* pass: password
 
 User:
-login: user@user.pl
-pass: password
+* login: user@user.pl
+* pass: password
 
 Events for seniors is an app made for diploma on Jagiellonian University.
 App allows users to search events and add their own after creating an account.
