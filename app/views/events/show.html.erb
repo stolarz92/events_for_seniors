@@ -47,16 +47,18 @@
             <td><%= @event.location %></td>
           </tr>
           <tr>
-            <th>Data rozpoczęcia</th>
-            <td><%= I18n.localize(@event.start_date, :format => ("%d %B %Y")) %></td>
+            <th>Rozpoczyna się </th>
+            <td>
+              <%= I18n.localize(@event.start_date, :format => ("%d %B %Y")) %> o
+              <%= @event.starts_at.strftime("%H:%M") %>
+            </td>
           </tr>
           <tr>
-            <th>Data zakończenia</th>
-            <td><%= I18n.localize(@event.end_date, :format => ("%d %B %Y")) %></td>
-          </tr>
-          <tr>
-            <th>Czas</th>
-            <td><%= @event.starts_at.strftime("%H:%M") %> - <%= @event.ends_at.strftime("%H:%M") %></td>
+            <th>Kończy się</th>
+            <td>
+              <%= I18n.localize(@event.end_date, :format => ("%d %B %Y")) %> o
+              <%= @event.ends_at.strftime("%H:%M") %>
+            </td>
           </tr>
           <tr>
             <th>Koszt</th>
