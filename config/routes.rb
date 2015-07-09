@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     get "sign_in", to: "devise/sessions#new"
     get "profile", to: "users#show"
+    get "profile/attendances", to: "users#attendances"
   end
 
   get '/' => 'homepage#index'
@@ -16,14 +17,8 @@ Rails.application.routes.draw do
     resources :events
   end
 
-  resources :users do
-    member do
-      get :attendances, :attendants
-    end
-  end
-
   resources :events
-  resources :relationships,       only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
