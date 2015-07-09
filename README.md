@@ -18,8 +18,7 @@ especially in forms.
   1. `git clone https://github.com/stolarz92/events_for_seniors.git`
   2. Go to app directory `cd events_for_seniors`
   3. Run `bundle` command
-  4. In db/seeds.rb change paths to images for events and cities to some of your local images
-  5. Run `rake db:setup`
+  4. Run `rake db:setup`
 
 ## Demo
 Working app is available [here](http://leszczyna.wzks.uj.edu.pl/12_stolarski/events_for_seniors/)
