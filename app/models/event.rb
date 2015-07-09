@@ -15,7 +15,12 @@ class Event < ActiveRecord::Base
            through: :user_relationships,
            source: :user
 
-  default_scope { order('starts_at ASC') }
+  scope :ordered_by_time_asc, ->{ order('starts_at ASC') }
+  scope :ordered_by_time_desc, ->{ order('starts_at DESC') }
+  scope :ordered_by_date_asc, ->{ order('start_date ASC') }
+  scope :ordered_by_date_desc, ->{ order('start_date DESC') }
+
+  scope :closest, ->(date, time) { where("start_date >= ? AND starts_at >= ?", date, time) }
 
 
   has_attached_file :image,
