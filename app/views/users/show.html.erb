@@ -9,6 +9,7 @@
 <div class="col-sm-12">
   <h2>Twoje wydarzenia <%= link_to 'Dodaj nowe', new_event_path, class: 'btn btn-success' %></h2>
   <% if @events.any? %>
+      <h4>Najbliższe</h4>
       <table class="table">
         <thead>
         <tr>
@@ -32,13 +33,14 @@
         <% end %>
         </tbody>
       </table>
+      <%= link_to 'Zobacz wszystkie', root_path %>
   <% else %>
       <p>Nie masz jeszcze żadnych wydarzeń.</p>
   <% end %>
   <hr class="hr-line" />
 </div>
 <div class="col-sm-12">
-  <h2>Twój kalendarz</h2>
+  <h2>Wydarzenia, którymi jesteś zainteresowany/a</h2>
   <% if @attendances %>
       <table class="table">
         <thead>
@@ -58,7 +60,8 @@
         <% end %>
         </tbody>
       </table>
-  <% else %>
+      <%= link_to 'Zobacz wszystkie', profile_attendances_path, class: 'btn btn primary' %>
+<% else %>
       <p>Nie interesujesz się jeszcze żadnymi wydarzeniami.</p>
   <% end %>
 </div>
