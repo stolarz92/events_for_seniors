@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     if @city.present? && params[:start_date].present?
-      @events = @city.filtered_events(params).paginate(:page => params[:page], :per_page => 10)
+      @events = @city.filtered_events(params).ordered_by_time_asc.paginate(:page => params[:page], :per_page => 10)
       @categories = Category.all
     else
       redirect_to root_path, alert: 'Złe miasto lub niepoprawna data. Wprowadź poprawne miasto lub datę w wyszukiwarce.'
