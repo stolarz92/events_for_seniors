@@ -9,31 +9,33 @@
 <div class="col-sm-12">
   <h2>Twoje wydarzenia <%= link_to 'Dodaj nowe', new_event_path, class: 'btn btn-success' %></h2>
   <% if @events.any? %>
-      <h4>Najbliższe</h4>
-      <table class="table">
-        <thead>
-        <tr>
-          <th>Nazwa</th>
-          <th>Data</th>
-          <th>Akcja</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% @events.each do |event| %>
-            <tr>
-              <td><%= event.name.truncate(30) %></td>
-              <td><%= "#{event.start_date} - #{event.end_date}" %></td>
-              <td>
-                <%= link_to 'Pokaż', city_event_path(event.city, event), class: 'btn btn-primary' %>
-                <%= link_to 'Edytuj', edit_event_path(event), class: 'btn btn-warning' %>
-                <%= link_to 'Usuń', event_path(event), method: :delete,
-                            data: { confirm: 'Na pewno chcesz usunąć to wydarzenie?' },
-                            class: 'btn btn-danger btn-xs'%></td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
-      <%= link_to 'Zobacz wszystkie', root_path %>
+      <div class="well">
+        <h4>Najbliższe</h4>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Nazwa</th>
+            <th>Data</th>
+            <th>Akcja</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @events.each do |event| %>
+              <tr>
+                <td><%= event.name.truncate(30) %></td>
+                <td><%= "#{event.start_date} - #{event.end_date}" %></td>
+                <td>
+                  <%= link_to 'Pokaż', city_event_path(event.city, event), class: 'btn btn-primary' %>
+                  <%= link_to 'Edytuj', edit_event_path(event), class: 'btn btn-warning btn-sm' %>
+                  <%= link_to 'Usuń', event_path(event), method: :delete,
+                              data: { confirm: 'Na pewno chcesz usunąć to wydarzenie?' },
+                              class: 'btn btn-danger btn-xs'%></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%= link_to 'Zobacz wszystkie', profile_events_path, class: 'btn btn-primary' %>
+      </div>
   <% else %>
       <p>Nie masz jeszcze żadnych wydarzeń.</p>
   <% end %>
@@ -41,27 +43,30 @@
 </div>
 <div class="col-sm-12">
   <h2>Wydarzenia, którymi jesteś zainteresowany/a</h2>
-  <% if @attendances %>
-      <table class="table">
-        <thead>
-        <tr>
-          <th>Nazwa</th>
-          <th>Data</th>
-          <th>Akcja</th>
-        </tr>
-        </thead>
-        <tbody>
-        <% @attendances.each do |attendance| %>
-            <tr>
-              <td><%= attendance.name.truncate(40) %></td>
-              <td><%= "#{attendance.start_date} - #{attendance.end_date}" %></td>
-              <td><%= link_to 'Szczegóły', city_event_path(attendance.city, attendance), class: 'btn btn-primary' %></td>
-            </tr>
-        <% end %>
-        </tbody>
-      </table>
-      <%= link_to 'Zobacz wszystkie', profile_attendances_path, class: 'btn btn primary' %>
-<% else %>
+  <% if @attendances.any? %>
+      <div class="well">
+        <h4>Najbliższe</h4>
+        <table class="table">
+          <thead>
+          <tr>
+            <th>Nazwa</th>
+            <th>Data</th>
+            <th>Akcja</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @attendances.each do |attendance| %>
+              <tr>
+                <td><%= attendance.name.truncate(40) %></td>
+                <td><%= "#{attendance.start_date} - #{attendance.end_date}" %></td>
+                <td><%= link_to 'Szczegóły', city_event_path(attendance.city, attendance), class: 'btn btn-primary' %></td>
+              </tr>
+          <% end %>
+          </tbody>
+        </table>
+        <%= link_to 'Zobacz wszystkie', profile_attendances_path, class: 'btn btn-primary' %>
+      </div>
+  <% else %>
       <p>Nie interesujesz się jeszcze żadnymi wydarzeniami.</p>
   <% end %>
 </div>

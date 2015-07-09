@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     get "sign_in", to: "devise/sessions#new"
     get "profile", to: "users#show"
     get "profile/attendances", to: "users#attendances"
+    get "profile/events", to: "users#events"
   end
 
   get '/' => 'homepage#index'

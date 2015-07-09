@@ -1,3 +1,4 @@
+<%= link_to 'Wróć do profilu', profile_path, class: 'btn btn-default' %>
 <div class="col-sm-12">
   <h2>Wydarzenia, którymi jesteś zainteresowany/a</h2>
   <% if @attendances %>
@@ -19,7 +20,9 @@
         <% end %>
         </tbody>
       </table>
-      <%= will_paginate @attendances, renderer: BootstrapPagination::Rails, :class => "pagination-lg"%>
+      <div class="col-sm-12 text-center">
+        <%= will_paginate @attendances, renderer: BootstrapPagination::Rails, :class => "pagination-lg"%>
+      </div>
   <% else %>
       <p>Nie interesujesz się jeszcze żadnymi wydarzeniami.</p>
   <% end %>
