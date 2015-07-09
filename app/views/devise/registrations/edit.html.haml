@@ -1,4 +1,4 @@
-%h2 Edytuj #{resource_name.to_s.humanize}
+%h2 Edytuj swoje dane
 .mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
   .panel.panel-info
     .panel-heading
@@ -9,15 +9,16 @@
           = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
             = f.error_notification
             .form-inputs
-              = f.input :email, required: true, autofocus: true
+              = f.input :email, required: true, autofocus: true, hint: "Wpisz twój nowy adres email lub pozostaw obecny"
               - if devise_mapping.confirmable? && resource.pending_reconfirmation?
                 %p
                   Currently waiting confirmation for: #{resource.unconfirmed_email}
               = f.input :password, label: 'Hasło', autocomplete: "off", hint: "Zostaw puste, jeśli nie chcesz zmieniać hasła", required: false
-              = f.input :password_confirmation, label: 'Potwierdź hasło', required: false
+              = f.input :password_confirmation, label: 'Potwierdź hasło', hint: "Jeśli wpisałeś/aś hasło w poprzednim polu, wpisz to samo hasło tutaj", required: false
               = f.input :current_password, label: 'Obecne hasło', hint: "Potrzebujemy twojego obecnego hasła do zmiany", required: true
             .form-actions
-              = f.button :submit, "Uaktualnij dane"
+              = f.button :submit, "Uaktualnij dane", class: "btn btn-primary"
+      %hr.hr-line
       %h3 Usuwanie konta
       %p #{link_to "Usuń moje konto", registration_path(resource_name), data: { confirm: "Jesteś pewien?" }, method: :delete}
       = link_to "Powrót", :back
