@@ -47,8 +47,8 @@
               %td= attendance.name.truncate(40)
               %td= "#{attendance.start_date} - #{attendance.end_date}"
               %td= link_to 'Szczegóły', city_event_path(attendance.city, attendance), class: 'btn btn-primary'
-  - else
+    - else
     %p Nie masz żadnych zbliżających się wydarzeń.
-  = link_to 'Zobacz wszystkie', profile_attendances_path, class: 'btn btn-primary'
+    = link_to 'Zobacz wszystkie', profile_attendances_path, class: 'btn btn-primary'
   - else
     %p Nie interesujesz się jeszcze żadnymi wydarzeniami.
