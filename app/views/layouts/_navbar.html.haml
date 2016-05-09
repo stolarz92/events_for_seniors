@@ -12,25 +12,22 @@
         = render 'layouts/partials/search_panel'
     %ul.nav.navbar-nav.navbar-right
       - if params[:controller] == 'cities'
-        %li.active
+        %li.active= link_to 'Miasta', cities_path
       - else
-        %li
-      = link_to 'Miasta', cities_path
+        %li= link_to 'Miasta', cities_path
       %li
         %a#incfont{:href => "#"} A+
       %li
         %a#decfont{:href => "#"} A-
       - if params[:controller] == 'static_pages'
-        %li.active
+        %li.active= link_to 'Kontakt', contact_path
       - else
-        %li
-      = link_to 'Kontakt', contact_path
+        %li= link_to 'Kontakt', contact_path
       - if user_signed_in?
         - if params[:controller] == 'users'
           %li.active
         - else
-          %li
-        = link_to 'Profil', profile_path
+          %li= link_to 'Profil', profile_path
         %li= link_to "Wyloguj", destroy_user_session_path, {:method => :delete}
       - else
         %li= link_to "Rejestracja", new_user_registration_path
