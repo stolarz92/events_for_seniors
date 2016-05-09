@@ -1,0 +1,19 @@
+.row
+  .col-sm-12
+    %h1
+      = @city.name
+      - if current_user && current_user.admin?
+        = link_to 'Edytuj', edit_city_path(@city), class: 'btn btn-warning'
+        = link_to 'Usuń miasto', city_path(@city), method: :delete, |
+          data: { confirm: 'Jesteś pewien?' },                      |
+          class: 'btn btn-danger btn-xs'                            |
+  %hr.hr-line/
+  .col-sm-12= @city.description.html_safe if @city.description.present?
+  %hr.hr-line/
+  .col-xs-12.col-sm-12.col-md-7.centered
+    = image_tag @city.image(:large), class: "img-responsive"
+  .col-sm-12.col-md-5.centered.today-city-events
+    = render 'cities/partials/propositions'
+%hr.hr-line/
+#newest.row.row-centered
+  = render 'cities/partials/newest'

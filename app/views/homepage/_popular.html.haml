@@ -1,0 +1,8 @@
+%h2 Najpopularniejsze miasta
+- @cities.each do |city|
+  .col-xs-6.col-sm-6.col-md-3.col-lg-3
+    %h3= link_to city.name, city_path(city)
+    = link_to city_path(city) do
+      = image_tag city.image(:thumb)
+.col-xs-12.see-all
+  = link_to 'Zobacz wszystkie miasta',cities_path, class: 'btn btn-primary btn-lg'

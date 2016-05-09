@@ -1,0 +1,30 @@
+%p#notice= notice
+.row
+  #events-top-belt.col-md-12
+    - if @city.present?
+      %h1
+        Wydarzenia w dniu #{params[:start_date]} w mieście #{@city.name}
+      %hr.hr-line/
+    - else
+      %p To miasto nie istnieje w bazie.
+- if @events.present?
+  .row
+    .col-sm-3
+      = render 'events/partials/filtering'
+    .event-list-items.col-sm-9
+      = render @events
+    .col-sm-12.text-center
+      = will_paginate @events, renderer: BootstrapPagination::Rails, :class => "pagination-lg"
+- else
+  %p
+    W dniu #{params[:start_date]} nie ma żadnych wydarzeń w mieście #{params[:search]}.
+  %p.lead Zmień datę lub miasto w wyszukiwarce lub wróć do poprzedniej strony i wybierz inne filtry.
+:javascript
+  if ($('body.events').length) {
+      $('.date').datepicker({
+          'language': "pl",
+          'todayHighlight': true,
+          'format': 'dd-mm-yyyy',
+          'autoclose': true
+      })
+  }

@@ -1,0 +1,10 @@
+%h2.no-margin-top
+  Co możesz robić dziś w mieście #{@city.name}?
+- @today_events.each do |event|
+  .col-xs-12.col-sm-6.centered.event-item
+    %h4.event-name= link_to event.name, city_event_path(@city, event)
+    = link_to city_event_path(@city, event) do
+      = image_tag event.image(:thumb), class: 'img-responsive img-centered'
+.col-sm-12.button-see-all
+  = link_to 'Zobacz wszystkie dzisiejsze wydarzenia', events_path(:search => @city.name, :start_date => @date), |
+    class: 'btn btn-primary btn-lg'                                                                             |

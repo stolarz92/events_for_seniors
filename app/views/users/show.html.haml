@@ -1,0 +1,54 @@
+.col-sm-12
+  %h2
+    Witaj #{current_user.email}!
+    \#{link_to 'Edytuj profil', edit_user_registration_path, class: 'btn btn-primary'}
+  %hr.hr-line/
+.col-sm-12
+  %h2
+    Twoje wydarzenia #{link_to 'Dodaj nowe', new_event_path, class: 'btn btn-success'}
+  - if @events.any?
+    .well
+      %h4 Najbliższe
+      %table.table
+        %thead
+          %tr
+            %th Nazwa
+            %th Data
+            %th Akcja
+        %tbody
+          - @events.each do |event|
+            %tr
+              %td= event.name.truncate(30)
+              %td= "#{event.start_date} - #{event.end_date}"
+              %td
+                = link_to 'Pokaż', city_event_path(event.city, event), class: 'btn btn-primary'
+                = link_to 'Edytuj', edit_event_path(event), class: 'btn btn-warning btn-sm'
+                = link_to 'Usuń', event_path(event), method: :delete,         |
+                  data: { confirm: 'Na pewno chcesz usunąć to wydarzenie?' }, |
+                  class: 'btn btn-danger btn-xs'                              |
+      = link_to 'Zobacz wszystkie', profile_events_path, class: 'btn btn-primary'
+  - else
+    %p Nie masz jeszcze żadnych wydarzeń.
+  %hr.hr-line/
+.col-sm-12
+  %h2 Wydarzenia, którymi jesteś zainteresowany/a
+  - if @attendances
+    %h4 Najbliższe
+    - if @attendances.any?
+      %table.table
+        %thead
+          %tr
+            %th Nazwa
+            %th Data
+            %th Akcja
+        %tbody
+          - @attendances.each do |attendance|
+            %tr
+              %td= attendance.name.truncate(40)
+              %td= "#{attendance.start_date} - #{attendance.end_date}"
+              %td= link_to 'Szczegóły', city_event_path(attendance.city, attendance), class: 'btn btn-primary'
+  - else
+    %p Nie masz żadnych zbliżających się wydarzeń.
+  = link_to 'Zobacz wszystkie', profile_attendances_path, class: 'btn btn-primary'
+  - else
+    %p Nie interesujesz się jeszcze żadnymi wydarzeniami.

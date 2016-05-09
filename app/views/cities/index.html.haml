@@ -1,0 +1,11 @@
+.row
+  #events-top-belt.col-md-12
+    %h1 Odkryj wspaniałe miejsca pełne interesujących wydarzeń!
+    %hr.hr-line/
+    - if current_user && current_user.admin?
+      = link_to 'Dodaj nowe miasto', new_city_path, class: 'btn btn-success'
+  - @cities.each do |city|
+    .col-xs-6.col-sm-4.col-md-3
+      %h3= link_to city.name, city_path(city)
+      = link_to city_path(city) do
+        = (image_tag city.image(:thumb))

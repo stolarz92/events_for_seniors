@@ -1,0 +1,39 @@
+.row.event-list-item
+  .well.col-md-12
+    .row
+      .col-xs-4.col-sm-3
+        = image_tag event.image.url(:thumb), :class => "img-responsive"
+      .col-xs-8.col-sm-9
+        = link_to '<i class="fa fa-eye"></i> Szczegóły'.html_safe, |
+          [                                                        |
+                  event.city,                                      |
+                  event,                                           |
+                  search: params[:search],                         |
+                  start_date: params[:start_date]                  |
+          ],                                                       |
+          class: 'btn btn-primary btn-lg pull-right'               |
+        %h3= event.name
+        %p
+          = event.category.name
+        %p
+          = fa_icon 'map-marker lg'
+          = event.location if event.location.present?
+        %p
+          = fa_icon 'calendar lg'
+          = I18n.localize(event.start_date, :format => ("%d %B %Y"))
+          \-
+          \#{I18n.localize(event.end_date, :format => ("%d %B %Y"))}
+        %p
+          = fa_icon 'clock-o lg'
+          = event.starts_at.strftime("%H:%M") if event.starts_at.present?
+          \- #{event.ends_at.strftime("%H:%M") if event.ends_at.present?}
+        %p
+          Wysiłek: #{effort_icons(event.effort.id)}
+        - if current_user && (current_user == event.user || current_user.admin?)
+          .pull-right
+            = link_to 'Edytuj', edit_event_path(event), class: 'btn btn-warning btn-sm'
+            = link_to 'Usuń', event_path(event), method: :delete,      |
+              data: { confirm: 'Na pewno chcesz usunąć wydarzenie?' }, |
+              class: 'btn btn-danger btn-xs'                           |
+        %p
+          Koszt: #{event.cost.name}

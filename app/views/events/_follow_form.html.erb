@@ -1,9 +1,0 @@
-<% unless current_user?(event.user) %>
-    <div id="follow_form">
-      <% if current_user.following?(event) %>
-          <%= render 'unfollow' %>
-      <% else %>
-          <%= render 'follow' %>
-      <% end %>
-    </div>
-<% end %>

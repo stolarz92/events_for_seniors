@@ -1,0 +1,9 @@
+= form_for(@city, :html => { :multipart => true }) do |f|
+  .form-group
+    = f.label :name, 'Nazwa'
+    = f.text_field :name, class: 'form-control'
+  .form-group
+    = f.label :image, 'Zdjęcie miasta'
+    = f.file_field :image, class: 'form-control'
+  .actions
+    = f.submit 'Utwórz miasto', class: 'btn btn-success'

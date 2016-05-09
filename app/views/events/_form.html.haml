@@ -1,0 +1,99 @@
+= simple_form_for(@event, :html => { :multipart => true }) do |f|
+  - if @event.errors.any?
+    #error_explanation
+      %h3.text-danger
+        Zapisanie wydarzenia nie powiodło się.
+        Sprawdź formularz i wprowadź poprawne dane.
+  .form-group
+    = f.input :name, label: 'Nazwa wydarzenia', class: 'form-control input-lg'
+  .form-group
+    = f.input :description,                                                  |
+      label: 'Opis',                                                         |
+      hint: 'W opisie używaj krótkich zdań, używaj nagłówków, stosuj listy', |
+      input_html: { class: 'tinymce' },                                      |
+      :rows => 15,                                                           |
+      :cols => 60                                                            |
+  :javascript
+    tinyMCE.init({
+        selector: 'textarea.tinymce',
+        language: 'pl'
+    });
+  .form-group.col-sm-6
+    = f.input :start_date,                                 |
+              as: :string,                                 |
+              label: 'Kiedy zaczyna się wydarzenie?',      |
+              input_html: { class: 'input-lg date' },      |
+              placeholder: 'Kiedy zaczyna się wydarzenie?' |
+      #:data => {provide: 'datepicker'}                    |
+  .form-group.col-sm-6
+    = f.input :end_date,                                 |
+              as: :string,                               |
+              label: 'Kiedy kończy się wydarzenie?',     |
+              input_html: { class: 'input-lg date' },    |
+              placeholder: 'Kiedy kończy się wydarzenie' |
+      #:data => {provide: 'datepicker'}                  |
+  .form-group.col-sm-6
+    = f.input :starts_at,                                      |
+      as: :string,                                             |
+      label: 'O której godzinie zaczyna się wydarzenie?',      |
+      input_html: { class: 'time input-lg' },                  |
+      placeholder: 'O której godzinie zaczyna się wydarzenie?' |
+  .form-group.col-sm-6
+    = f.input :ends_at,                                       |
+      as: :string,                                            |
+      label: 'O której godzinie kończy się wydarzenie?',      |
+      input_html: { class: 'time input-lg' },                 |
+      placeholder: 'O której godzinie kończy się wydarzenie?' |
+  .form-group
+    = f.input :city_id,                     |
+      label: 'Wybierz miasto',              |
+      collection: City.all,                 |
+      prompt: 'Kliknij, aby wybrać miasto', |
+      input_html: { class: 'input-lg' }     |
+  .form-group
+    = f.input :location,                |
+      label: 'Dokładny adres',          |
+      input_html: { class: 'input-lg' } |
+  .form-group
+    = f.input :category_id,                    |
+      label: 'Wybierz kategorię',              |
+      collection: Category.all,                |
+      prompt: 'Kliknij, aby wybrać kategorię', |
+      input_html: { class: 'input-lg' }        |
+  .form-group
+    = f.input :contact,                 |
+      label: 'Kontakt do organizatora', |
+      input_html: { class: 'input-lg'}  |
+  .form-group
+    = f.input :cost_id,                    |
+      label: 'Wybierz koszt',              |
+      collection: Cost.all,                |
+      prompt: 'Kliknij, aby wybrać koszt', |
+      input_html: { class: 'input-lg' }    |
+  .form-group
+    = f.input :effort_id,                           |
+      label: 'Wysiłek',                             |
+      collection: Effort.all,                       |
+      prompt: 'Kliknij, aby wybrać poziom wysiłku', |
+      input_html: { class: 'input-lg' }             |
+  .form-group
+    = f.input :website,                   |
+      label: 'Adres strony internetowej', |
+      input_html: { class: 'input-lg'}    |
+  .form-group
+    = f.input :image,                  |
+      as: :file,                       |
+      label: 'Wybierz zdjęcie',        |
+      input_html: { class: 'input-lg'} |
+  .actions
+    = f.button :submit, 'Zapisz wydarzenie', |
+      class: 'btn btn-success btn-lg'        |
+:javascript
+  $(document).on("page:load ready", function(){
+      $('.date').datepicker({
+          'language': "pl",
+          'todayHighlight': true,
+          'format': 'dd-mm-yyyy',
+          'autoclose': true
+      });
+  });

@@ -1,0 +1,32 @@
+= form_tag events_path, :method => 'get', class: 'navbar-form navbar-left', role:'search' do
+  .form-group
+    %label.sr-only{:for => "place"} Name
+    = text_field_tag :search,                                    |
+      params[:search],                                           |
+      class: 'form-control',                                     |
+      placeholder: 'Miasto (np. Kraków)',                        |
+      type: 'search',                                            |
+      data: {                                                    |
+              autocomplete: homepage_autocomplete_city_name_path |
+      }                                                          |
+  .form-group
+    %label.sr-only{:for => "date"} Date
+    = text_field_tag :start_date,       |
+      params[:start_date],              |
+      placeholder: 'Data',              |
+      class: 'form-control date short', |
+      :data => {                        |
+              provide: 'datepicker'     |
+      }                                 |
+  %button.btn.btn-primary{:type => "submit"}
+    %i.fa.fa-search
+    Szukaj
+:javascript
+  $( document ).ready(function() {
+      $(".date").datepicker({
+          'language': "pl",
+          'todayHighlight': true,
+          'format': 'dd-mm-yyyy',
+          'autoclose': true
+      })
+  });

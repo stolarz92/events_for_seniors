@@ -1,0 +1,24 @@
+.filter-box
+  %h4 Wysiłek
+  %ul.filter
+    - effort.each do |effort|
+      - if effort.id.to_s == params[:effort_id]
+        %li.category-active
+      - else
+        %li
+      = link_to effort.name, events_path(                |
+                   :search => params[:search],           |
+                   :start_date => params[:start_date],   |
+                   :category_id => params[:category_id], |
+                   :effort_id => effort.id,              |
+                   :cost_id => params[:cost_id]          |
+           ),                                            |
+        class: 'filter-button'                           |
+    - if params[:effort_id]
+      = link_to 'Wyczyść filtr', events_path(         |
+                :search => params[:search],           |
+                :start_date => params[:start_date],   |
+                :category_id => params[:category_id], |
+                :effort_id => nil,                    |
+                :cost_id => params[:cost_id]          |
+        )                                             |

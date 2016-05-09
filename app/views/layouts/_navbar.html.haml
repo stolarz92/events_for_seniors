@@ -1,0 +1,37 @@
+%nav.navbar.navbar-default.navbar-fixed-top.navbar-inverse
+  .navbar-header{"data-no-turbolink" => ""}
+    %button.navbar-toggle{"data-target" => "#collapsibleMenu", "data-toggle" => "collapse", :type => "button"}
+      %span.sr-only Toggle navigation
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+    = link_to t('.app_name'), root_path, class: 'navbar-brand'
+  #collapsibleMenu.collapse.navbar-collapse
+    - if params[:controller] != 'homepage'
+      %ul.nav.navbar-nav.navbar-left
+        = render 'layouts/partials/search_panel'
+    %ul.nav.navbar-nav.navbar-right
+      - if params[:controller] == 'cities'
+        %li.active
+      - else
+        %li
+      = link_to 'Miasta', cities_path
+      %li
+        %a#incfont{:href => "#"} A+
+      %li
+        %a#decfont{:href => "#"} A-
+      - if params[:controller] == 'static_pages'
+        %li.active
+      - else
+        %li
+      = link_to 'Kontakt', contact_path
+      - if user_signed_in?
+        - if params[:controller] == 'users'
+          %li.active
+        - else
+          %li
+        = link_to 'Profil', profile_path
+        %li= link_to "Wyloguj", destroy_user_session_path, {:method => :delete}
+      - else
+        %li= link_to "Rejestracja", new_user_registration_path
+        %li= link_to "Login", new_user_session_path
