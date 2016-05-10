@@ -47,7 +47,7 @@ gem 'jquery-turbolinks'
 # Font awesome
 gem 'font-awesome-rails'
 # Devise
-gem 'devise'
+gem 'devise', '~> 3.5', '>= 3.5.2'
 # Simple form
 gem 'simple_form'
 # Haml
