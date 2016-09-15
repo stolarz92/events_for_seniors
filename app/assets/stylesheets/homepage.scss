@@ -5,6 +5,23 @@
   margin-top: 30px;
 }
 
-.search-description {
-  text-align: justify;
+.main-page-description {
+  padding: 10px 10px 10px 10px;
+  width: 50%;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-top: 60px;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 10px;
+  color: white;
+}
+
+.bg-image {
+  background-image: image-url("photo2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 550px;
+  margin-top: -20px;
+  position: relative;
+
 }

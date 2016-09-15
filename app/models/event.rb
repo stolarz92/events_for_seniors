@@ -26,12 +26,14 @@ class Event < ActiveRecord::Base
   has_attached_file :image,
                     :styles => {
                         :thumb    => ['200x200#',  :jpg, :quality => 70],
+                        :small    => ['300x300#',  :jpg, :quality => 70],
                         :preview  => ['480x480#',  :jpg, :quality => 70],
                         :large    => ['600>',      :jpg, :quality => 70],
                         :retina   => ['1200>',     :jpg, :quality => 30]
                     },
                     :convert_options => {
                         :thumb    => '-set colorspace sRGB -strip',
+                        :small    => '-set colorspace sRGB -strip',
                         :preview  => '-set colorspace sRGB -strip',
                         :large    => '-set colorspace sRGB -strip',
                         :retina   => '-set colorspace sRGB -strip -sharpen 0x0.5'
