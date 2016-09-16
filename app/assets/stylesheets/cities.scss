@@ -1,6 +1,32 @@
 // Place all the styles related to the Cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.bg-image-cities {
+  background-image: image-url("city_photo2.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 250px;
+  margin-top: -20px;
+  position: relative;
+
+  .slogan {
+    width: 50%;
+    margin: 0 auto;
+    color: #e3f2ff;
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 10px;
+    width: 460px;
+    height: 50px;
+    margin-top: 100px;
+
+    h2 {
+      margin-left: 10px;
+      font-size: 42px;
+    }
+  }
+}
+
 h2.no-margin-top {
   margin-top: 0;
 }
