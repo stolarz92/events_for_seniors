@@ -2,21 +2,21 @@
   = form_tag events_path, :method => 'get', id: 'search-form', class: 'form-inline', "data-no-turbolink" => true do
     .form-group
       %label.sr-only{:for => "place"} Name
-      = text_field_tag :search,                                 |
-        params[:search],                                        |
-        class: 'form-control input-lg',                         |
-        placeholder: 'Wpisz miasto',                                  |
-        type: 'search',                                         |
-        data: {                                                 |
-             autocomplete: homepage_autocomplete_city_name_path |
-        }                                                       |
+      = text_field_tag :search,                                 
+        params[:search],
+        class: 'form-control input-lg',
+        placeholder: 'Wpisz miasto',
+        type: 'search',
+        data: {
+             autocomplete: homepage_autocomplete_city_name_path
+        }
     .form-group
       %label.sr-only{:for => "date"} Email
-      = text_field_tag :start_date,              |
-        params[:start_date],                     |
-        placeholder: 'Kliknij, aby wybrać datę', |
-        class: 'form-control input-lg date',     |
-        :data => {                               |
-                provide: 'datepicker',           |
-        }                                        |
+      = text_field_tag :start_date,
+        params[:start_date],
+        placeholder: 'Kliknij, aby wybrać datę',
+        class: 'form-control input-lg date',
+        :data => {
+                provide: 'datepicker',
+        }
     = submit_tag 'Szukaj',:name => nil, class: 'btn btn-danger btn-lg'
