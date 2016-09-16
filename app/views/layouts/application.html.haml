@@ -13,7 +13,6 @@
       - flash.each do |name, msg|
         = content_tag :div, msg, class: "alert alert-#{name}"
       = yield
-    %div
     = render 'layouts/footer'
 %html
   :javascript

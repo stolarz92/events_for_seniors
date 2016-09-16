@@ -3,10 +3,16 @@
 @import "font-awesome";
 @import url(http://fonts.googleapis.com/css?family=Lato);
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
   padding-top: 70px;
   font-family: 'Lato', sans-serif;
   font-size: 16px;
+  margin: 0 0 100px;
 }
 
 /* centered columns styles */
@@ -54,11 +60,13 @@ body {
 /* footer */
 .footer {
   background-color: rgba(0,0,0,0.8);
-
-  #footer-opinion-form {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  overflow:hidden;
+  height: 11em;
 
   #footer-sitemap {
     margin-top: 20px;
@@ -129,30 +137,12 @@ body {
   background-image: none;
 }
 
-/* New event form */
-.cost_label{
-
-}
-
 .short {
   max-width: 100px;
 }
 
 .copyright {
   color: whitesmoke;
-}
-
-html, body {
-  height: 100%;
-}
-// .wrapper {
-//   min-height: 80%;
-//   height: auto !important;
-//   height: 100%;
-//   margin: 0 auto -4em;
-// }
-.footer {
-  height: 11em;
 }
 
 .push {
