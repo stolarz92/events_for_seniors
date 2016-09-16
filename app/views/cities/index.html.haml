@@ -1,8 +1,9 @@
+.row.bg-image-cities-index
+  .slogan
+    %h2 Odkrywaj nowe miejsca
 .row
   .container
     #events-top-belt.col-md-12
-      %h1 Odkryj wspaniałe miejsca pełne interesujących wydarzeń!
-      %hr.hr-line/
       - if current_user && current_user.admin?
         = link_to 'Dodaj nowe miasto', new_city_path, class: 'btn btn-success'
     - @cities.each do |city|
