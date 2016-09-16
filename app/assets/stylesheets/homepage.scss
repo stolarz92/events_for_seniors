@@ -17,11 +17,21 @@
 }
 
 .bg-image {
-  background-image: image-url("photo2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   height: 550px;
   margin-top: -20px;
   position: relative;
+}
 
+.bg-image-first {
+  background-image: image-url("p1.jpg");
+  background-position: center;
+  transition: background 0.5s linear;
+}
+
+.bg-image-second {
+  background-image: image-url("p2.jpg");
+  background-position: center;
+  transition: background 0.5s linear;
 }
