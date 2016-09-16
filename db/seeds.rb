@@ -44,18 +44,7 @@ Natomiast w 2006 r. amerykańska agencja Orbitz uznała gród Kraka za najmodnie
  do 1795 r. Kraków był oficjalną stolicą Polski, a przypominają o tym liczne w mieście zabytki.</p>
 <p>Większość z nich usytuowana jest wokół słynnej Drogi Królewskiej, która rozpoczyna się na Kleparzu, wiedzie obok pozostałości średniowiecznych fortyfikacji –
 Bramy Floriańskiej, Barbakanu, baszt obronnych – dalej biegnie ulicą Floriańską aż na Rynek Główny, gdzie mija kościół Mariacki i Sukiennice,
-a następnie ulicą Grodzką dochodzi do Wzgórza Wawelskiego, gdzie usytuowany jest Zamek Królewski i Katedra Wawelska. </p>
-<p>Krakowska Via Regia przecina Planty –
-najbardziej reprezentacyjny park miasta, a wokół niej zlokalizowane jest także słynne Muzeum Książąt Czartoryskich,
-Teatr Stary im. Heleny Modrzejewskiej oraz zabytkowe budynki Uniwersytetu Jagiellońskiego, w tym najstarsze Collegium Maius.
-W Krakowie istniała również przez wieki znacząca gmina żydowska.</p>
-<p>Obszar zamieszkiwany przez Żydów – Krakowski
-Kazimierz – jest dziś miejscem, gdzie tradycja wspaniale współgra z nowoczesnością, gdzie w sąsiedztwie pięknych synagog funkcjonują popularne kawiarnie i kluby.
- Na obszarze Kazimierza zlokalizowany jest też jeden z najznamienitszych panteonów narodowych – Krypta Zasłużonych na Skałce oraz słynna Fabryka Schindlera,
-której dzieje opowiedział w 1993 r. Steven Spielberg w filmie „Lista Schindlera”.</p>
-<p> W ostatnich latach Kraków stał się miejscem licznych pielgrzymek.
-Katolicy odwiedzają przede wszystkim Sanktuarium Bożego Miłosierdzia w Łagiewnikach i podchodzą pod „okno papieskie” Pałacu Biskupiego – miejsce, w którym mieszkał
-niegdyś Karol Wojtyła i skąd, już jako papież, prowadził on wielogodzinne rozmowy z wiernymi.</p>",
+a następnie ulicą Grodzką dochodzi do Wzgórza Wawelskiego, gdzie usytuowany jest Zamek Królewski i Katedra Wawelska. </p>",
                    image: File.new(Rails.root + "app/assets/images/city_images/krakow.jpg")
                },
                {
@@ -74,16 +63,7 @@ niezapomniane wrażenia pozostawiają plenerowe koncerty fortepianowe, odbywają
 Chopina w Łazienkach. Co roku stolica gości wykonawców o ustalonej światowej renomie,
  biorących udział w międzynarodowych festiwalach i konkursach, na przykład w Międzynarodowym Konkursie Pianistycznym
  im. Fryderyka Chopina, Międzynarodowym Festiwalu Muzyki Współczesnej \"Warszawska Jesień\", \"Jazz Jamboree\"
-czy Warsaw Summer Jazz Days.</p>
-
-<p>Warszawa jest dobrze przygotowana na przyjęcie gości.
-W około 200 obiektach na turystów czeka 20 tys. miejsc noclegowych, przy czym zarówno standard,
-jak i formy noclegów dostosowano do różnych potrzeb i warunków finansowych gości.
-Tak, więc obok hoteli o zróżnicowanym standardzie na turystów czekają także schroniska i kampingi</p>
-
-<p>Zabudowa wielkomiejska współistnieje z otwartą przestrzenią skwerów, parków i ogrodów.
-Tętniąca życiem metropolia bez trudu odnajduje się w Europie. Pozostawia niezapomniane wrażenia gościom i
-oferuje szanse tym, którzy zdecydują się zostać tu na dłużej.</p>",
+czy Warsaw Summer Jazz Days.</p>",
                    image: File.new(Rails.root + "app/assets/images/city_images/warszawa.jpg")
                },
                {
@@ -103,24 +83,7 @@ Wrocław jest miastem o bogatej i burzliwej historii. Czasy wczesnego średniowi
 </p>
 <p>
 W centrum miasta rozpościera się Park Szczytnicki, w którym rośnie 350 gatunków drzew i krzewów oraz znajduje się
-unikatowy Ogród Japoński, stworzony i pielęgnowany zgodnie z zasadami japońskiej sztuki ogrodniczej.
- Równie interesującym miejscem spacerów jest wrocławski Ogród Botaniczny, z jego niezwykłą wystawą kwiatów,
-alpinarium oranżerią, i największą w Polsce kaktusiarnią, a także najsłynniejszy w Polsce Ogród Zoologiczny,
-założony w 1865 roku.</p>
-<p>
-Wizytówką miasta są przede wszystkim międzynarodowe festiwale muzyczne.
-Największy z nich to Międzynarodowy Festiwal 'Wratislavia Cantans'. We Wrocławiu odbywają się również: Festiwal 'Jazz nad Odrą',
-Międzynarodowe Zaduszki Jazzowe, Dni Muzyki Starych Mistrzów, Przegląd Piosenki Aktorskiej, Wrocławskie Spotkania
- Teatrów Jednego Aktora i Małych Form Teatralnych, Międzynarodowy Festiwal Dialog Wroclaw. Słynne w Europie stały się również tworzone z rozmachem przedstawienia operowe organizowane w Hali Ludowej. Do atrakcji kulturalnych, które koniecznie należy poznać, należy niewątpliwie Panorama Racławicka - jest to monumentalna rotunda, w której mieści się panoramiczny obraz, który przedstawia bitwę pod Racławicami z 4 kwietnia 1794 r.
-</p>
-<p>Noclegi zapewniają liczne hotele we Wrocławiu, miasto oferuje również bogate zaplecze sportowo - rekreacyjne.
-Wrocław to ośrodek sportów wodnych i turystyki rzecznej oraz ważny punkt na sportowej mapie Polski,
-szczycący się tradycjami w koszykówce, zawodach żużlowych, piłce nożnej, strzelectwie.
- Do aktywnego formy wypoczynku zachęcają starannie pielęgnowane parki oraz stale wzrastająca ilość tras rowerowych.
- Atutem Wrocławia jest dobre połączenia z ośrodkami wczasowymi, uzdrowiskowymi i sportowymi położonymi w o
-brębie Kotliny Kłodzkiej oraz Sudetów i Karkonoszy. Zwiększa to i tak już bogatą ofertę aktywnego wypoczynku
- we Wrocławiu i zaspokoi wymagania nawet najbardziej wybrednych turystów.</p>
-",
+unikatowy Ogród Japoński, stworzony i pielęgnowany zgodnie z zasadami japońskiej sztuki ogrodniczej.</p>",
                    image: File.new(Rails.root + "app/assets/images/city_images/wroclaw.jpg")
                },
                {
@@ -139,23 +102,7 @@ miasta - znajduje się tu najstarsza w kraju katedra, w której podobno odbył s
 Poznań współczesny to tętniąca życiem metropolia, miasto kultury i rozrywki.
 130 tysięcy studentów daje miastu niesamowitą energię, zapełniając wieczorami liczne puby, kafejki i kluby,
 gdzie zabawa trwa zawsze do rana! Międzynarodowe festiwale - jak słynna poznańska Malta, festyny -
-jak Dni Świętomarcińskie, happeningi, koncerty, wystawy w muzeach i galeriach, spektakle.</p>
-
-<p>Interesującym miejscem, które często odwiedzają turyści, jest ulica Półwiejska,
- na której znajduje się wiele restauracji i sklepów. Przy tej ulicy znajduje się również Stary Browar,
-oficjalnie uznany za najpiękniejsze centrum handlowe na świecie przez międzynarodową fundację ICSC.</p>
-
-<p>
-Miłośnikom turystyki aktywnej Poznań oferuje pola golfowe,
-pływalnie i baseny, korty tenisowe, kluby fitness, sztrzelnicę oraz lodowiska.
-Fani sportu mogą pójść na mecz piłki nożnej - tutaj siedzibę ma pierwszoligowy klub Lech Poznań -
-lub na mecz koszykówki, siatkówki, hokeja na trawie albo piłki ręcznej.
-</p>
-
-<p>Przez Poznań przebiegają ciekawe trasy turystyczne: europejski Szlak Romański,
-Szlak Piastowski oraz Trasa Kórnicka. Wokół miasta wytyczony jest rowerowy \"Pierścień Poznański\"
-połączony z centrum siedmioma szlakami dojazdowymi. Dla osób spragnionych obcowania z przyrodą swoje
-podwoje otwierają dwa ogrody zoologiczne, ogród botaniczny, palmiarnia oraz zabytkowe parki.</p>",
+jak Dni Świętomarcińskie, happeningi, koncerty, wystawy w muzeach i galeriach, spektakle.</p>",
                    image: File.new(Rails.root + "app/assets/images/city_images/poznan.jpg")
                },
                {
@@ -166,27 +113,6 @@ Gdańsk położony jest nad Zatoką Gdańską. Razem z Gdynią i Sopotem tworzy 
 Założony w 997 r., otrzymał prawa miejskie w 1263 r. Jako hanzeatyckie miasto portowe,
 Gdańsk bardzo dynamicznie rozwijał się, zarówno pod względem gospodarczym jak i kulturalnym.
 Swego czasu stał się najbogatszym miastem Polski, czego efekty widać do dziś.</p>
-
-<p>Gdańsk jest jednym z większych kurortów nadbałtyckich. Wzdłuż brzegu na odcinku o długości 23 km
-rozpościera się plaża. Zorganizowano tutaj trzy kąpieliska oraz wybudowano molo o długości 130 m.
-<p>Jednym z najatrakcyjniejszych miejsc nadmorskich jest Wyspa Sobieszewska, która jako
-jedyna w Polsce powstała w wyniku działalności człowieka. Od 1994 r. posiada status wyspy ekologicznej,
-który gwarantuje przyjazne człowiekowi otoczenie.
-</p>
-<p>
- Gdańsk otaczają malownicze tereny
-Trójmiejskiego Parku Krajobrazowego (utworzonego w 1979 r.) o powierzchni ok. 20 tysięcy ha, a także wzgórza
-i jeziora Szwajcarii Kaszubskiej. Turyści mogą wybrać się na spacer do Parku Oliwskiego,
-w którym znajduje się wiele gatunków rzadkich drzew i roślin oraz Pałac Opatów wzniesiony w XVIII w.
- Warto również zwiedzić, zajmujący około 120 ha, ogród zoologiczny (znajdujący się w Gdańsku-Oliwie),
-który jest jednym z największych w Polsce.
-</p>
-<p>
-Jedną z bardziej interesujących atrakcji turystycznych miasta jest
-położona w samym centrum przystań jachtowa Marina Gdańsk wybudowana w 1997 r. Odwiedza ją wiele jachtów zarówno
-polskich, jak i zagranicznych. Miłośnicy sportów wodnych mogą korzystać z Zatoki Gdańskiej lub Opływu Motławy,
-który został gruntownie wyremontowany i stał się przyjemnym miejscem do wędrówek,jazdy rowerem, a także wędkowania.
-</p>
 Do najważniejszych zabytków Gdańska można zaliczyć:
 <ul>
 <li>Drogę Królewską,</li>
@@ -198,15 +124,7 @@ Do najważniejszych zabytków Gdańska można zaliczyć:
 <li>Złota Kamienica,</li>
 <li>27–metrowa Latarnia Morska</li>
 <li>oraz Żuraw – najstarszy zachowany dźwig w Europie.</li>
-</ul>
-<p> Gdańsk jest jednym z miast leżących na Europejskim Szlaku Gotyku Ceglanego.</p>
-<p>
-Gdańsk nazywa się Światową Stolicą Bursztynu.
-Nieodłącznie z dziejami miasta związana jest sztuka bursztyniarska.
-Po zniszczeniach spowodowanych wojnami, miastu udało się powrócić do tradycji
- i na powrót otworzyć warsztaty obróbki bursztynu. Dziś Gdańsk jest siedzibą Krajowej
-Izby Gospodarczej Bursztynu i Międzynarodowego Stowarzyszenia Bursztynników,
-a także gospodarzem największych na świecie targów bursztynu („AMBERIF” i „AMBERMART”).</p>",
+</ul>",
                    image: File.new(Rails.root + "app/assets/images/city_images/gdansk.jpg")
                }])
 end

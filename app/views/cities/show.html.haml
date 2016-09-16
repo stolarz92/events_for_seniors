@@ -12,11 +12,11 @@
             data: { confirm: 'Jesteś pewien?' },                      |
             class: 'btn btn-danger btn-xs'                            |
     %hr.hr-line/
-    .col-sm-12= @city.description.html_safe if @city.description.present?
-    %hr.hr-line/
-    .col-xs-12.col-sm-12.col-md-7.centered
+    .col-xs-12.col-sm-6.col-md-6.centered
       = image_tag @city.image(:large), class: "img-responsive"
-    .col-sm-12.col-md-5.centered.today-city-events
+    .col-sm-6= @city.description.html_safe if @city.description.present?
+    %hr.hr-line/
+    .col-sm-12.col-md-12.centered.today-city-events
       = render 'cities/partials/propositions'
 .row
   .container

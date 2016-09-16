@@ -3,7 +3,10 @@
     = f.label :name, 'Nazwa'
     = f.text_field :name, class: 'form-control'
   .form-group
+    = f.label :name, 'Opis'
+    = f.text_area :description, class: 'form-control'
+  .form-group
     = f.label :image, 'Zdjęcie miasta'
     = f.file_field :image, class: 'form-control'
   .actions
-    = f.submit 'Utwórz miasto', class: 'btn btn-success'
+    = f.submit 'Edytuj miasto', class: 'btn btn-success'
